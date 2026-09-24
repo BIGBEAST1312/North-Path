@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: north-path
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # One worker on purpose: the assistant's call budget is in memory, so a
+    # second worker would quietly double it. The timeout is generous because a
+    # busy Gemini model is retried rather than failed.
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 90
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false          # set this in the Render dashboard, never in the repo
+      - key: PYTHON_VERSION
+        value: "3.11.9"

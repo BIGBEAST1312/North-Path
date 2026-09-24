@@ -1,0 +1,299 @@
+{
+  "_note": "41 options: 40 degrees plus a pre-med pathway. Groups follow Statistics Canada's large fields; order within a group is not an enrolment ranking.",
+  "degrees": [
+    {
+      "id": "business",
+      "name": "Business Administration / Commerce",
+      "group": "Business",
+      "kind": "degree",
+      "outlook": "business"
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting",
+      "group": "Business",
+      "kind": "degree",
+      "outlook": "business"
+    },
+    {
+      "id": "economics",
+      "name": "Economics",
+      "group": "Business",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "finance",
+      "name": "Finance",
+      "group": "Business",
+      "kind": "degree",
+      "outlook": "business"
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "group": "Business",
+      "kind": "degree",
+      "outlook": "business"
+    },
+    {
+      "id": "hr",
+      "name": "Human Resources Management",
+      "group": "Business",
+      "kind": "degree",
+      "outlook": "business"
+    },
+    {
+      "id": "supply-chain",
+      "name": "Supply Chain Management",
+      "group": "Business",
+      "kind": "degree",
+      "outlook": "business"
+    },
+    {
+      "id": "cs",
+      "name": "Computer Science",
+      "group": "Computing & Math",
+      "kind": "degree",
+      "outlook": "cs"
+    },
+    {
+      "id": "software-eng",
+      "name": "Software Engineering",
+      "group": "Computing & Math",
+      "kind": "degree",
+      "outlook": "engineering"
+    },
+    {
+      "id": "data-science",
+      "name": "Data Science",
+      "group": "Computing & Math",
+      "kind": "degree",
+      "outlook": "cs"
+    },
+    {
+      "id": "math-stats",
+      "name": "Mathematics and Statistics",
+      "group": "Computing & Math",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "it",
+      "name": "Information Technology",
+      "group": "Computing & Math",
+      "kind": "degree",
+      "outlook": "cs"
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity",
+      "group": "Computing & Math",
+      "kind": "degree",
+      "outlook": "cs"
+    },
+    {
+      "id": "mech-eng",
+      "name": "Mechanical Engineering",
+      "group": "Engineering",
+      "kind": "degree",
+      "outlook": "engineering"
+    },
+    {
+      "id": "ece",
+      "name": "Electrical and Computer Engineering",
+      "group": "Engineering",
+      "kind": "degree",
+      "outlook": "engineering"
+    },
+    {
+      "id": "civil-eng",
+      "name": "Civil Engineering",
+      "group": "Engineering",
+      "kind": "degree",
+      "outlook": "engineering"
+    },
+    {
+      "id": "chem-eng",
+      "name": "Chemical Engineering",
+      "group": "Engineering",
+      "kind": "degree",
+      "outlook": "engineering"
+    },
+    {
+      "id": "biomed-eng",
+      "name": "Biomedical Engineering",
+      "group": "Engineering",
+      "kind": "degree",
+      "outlook": "engineering"
+    },
+    {
+      "id": "nursing",
+      "name": "Nursing",
+      "group": "Health",
+      "kind": "degree",
+      "outlook": "nursing"
+    },
+    {
+      "id": "health-sci",
+      "name": "Kinesiology / Health Sciences",
+      "group": "Health",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "pharmacy",
+      "name": "Pharmacy / Pharmaceutical Sciences",
+      "group": "Health",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "public-health",
+      "name": "Public Health",
+      "group": "Health",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "nutrition",
+      "name": "Nutrition and Food Science",
+      "group": "Health",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "med-lab",
+      "name": "Medical Laboratory Science",
+      "group": "Health",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "group": "Sciences",
+      "kind": "degree",
+      "outlook": "sciences"
+    },
+    {
+      "id": "biochem",
+      "name": "Biochemistry / Chemistry",
+      "group": "Sciences",
+      "kind": "degree",
+      "outlook": "sciences"
+    },
+    {
+      "id": "env-sci",
+      "name": "Environmental Science",
+      "group": "Sciences",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "group": "Sciences",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "neuro",
+      "name": "Neuroscience",
+      "group": "Sciences",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "agriculture",
+      "name": "Agriculture / Agricultural Science",
+      "group": "Sciences",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "psychology",
+      "name": "Psychology",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": "psychology"
+    },
+    {
+      "id": "poli-sci",
+      "name": "Political Science",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "criminology",
+      "name": "Criminology",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": "education"
+    },
+    {
+      "id": "sociology",
+      "name": "Sociology",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "social-work",
+      "name": "Social Work",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": "arts"
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "group": "Social Sciences & Humanities",
+      "kind": "degree",
+      "outlook": "arts"
+    },
+    {
+      "id": "architecture",
+      "name": "Architecture",
+      "group": "Design & Built Environment",
+      "kind": "degree",
+      "outlook": null
+    },
+    {
+      "id": "fine-arts",
+      "name": "Fine Arts and Design",
+      "group": "Design & Built Environment",
+      "kind": "degree",
+      "outlook": "arts"
+    },
+    {
+      "id": "premed",
+      "name": "Planning to become a doctor (pre-med pathway)",
+      "group": "Health",
+      "kind": "pathway",
+      "outlook": null,
+      "pathway": [
+        "biology",
+        "health-sci",
+        "biochem",
+        "neuro"
+      ],
+      "notice": "Canada has no MBBS. Doctors earn an MD, which almost every Canadian medical school admits you to only after an undergraduate degree (Quebec schools are the main exception, taking some students from CEGEP). Surgery is a residency after the MD, not a degree. Most Canadian medical schools admit few or no international students, so check each school's international MD policy before choosing. The results below rank the undergraduate degrees students commonly take before applying."
+    }
+  ]
+}

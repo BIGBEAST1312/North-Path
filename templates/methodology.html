@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — North Path</title>
+<style>
+  :root{--deep:#12281e;--cream:#f5efdc;--gold:#c9a227;--ink:#12281e;--muted:#5f6b5f;--rule:#d9d0b4;--warn:#8a4b12}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--deep);
+    font:15px/1.65 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif}
+  .sheet{max-width:760px;margin:0 auto;background:var(--cream);color:var(--ink);
+    padding:40px 44px 56px;border-top:5px solid var(--gold);min-height:100vh}
+  @media(max-width:620px){.sheet{padding:28px 20px 40px}}
+  .back{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;margin:0 0 22px;font-weight:600}
+  .back:hover{color:var(--ink)}
+  h1{font-size:27px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;font-weight:600}
+  .kicker{font-style:italic;color:var(--muted);margin:0 0 26px}
+  h2{font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin:32px 0 10px;
+    border-left:3px solid var(--gold);padding-left:12px;font-weight:600}
+  p,li{font-size:15px}
+  code{background:#e8e2cc;padding:1px 6px;font-size:13px}
+  .warn{border-left:3px solid var(--warn);background:#e8e2cc;padding:14px 16px;color:#5a3512}
+  .rule{height:1px;background:var(--rule);margin:26px 0}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <a class="back" href="/">&larr; Back to the index</a>
+  <h1 class="serif">Methodology</h1>
+  <p class="kicker serif">How every number on the index is made, and what it cannot tell you.</p>
+
+  <h2>Ranges, not single figures</h2>
+  <p>Tuition is a number a university publishes. Rent is not — it is a distribution that moves by
+  neighbourhood, by month, and by whether a listing is real. A single figure with a source link
+  promises a precision the underlying data cannot deliver, so every living cost here is a range
+  carrying its sample size and the date it was checked.</p>
+
+  <h2>Budget: tuition only</h2>
+  <p>The budget you enter is for tuition. Any university charging more is removed from the results; if none
+  are left, the index says so and shows the lowest tuition available for that degree. Living costs are not
+  part of the budget — they depend on choices you haven't made yet — so they are estimated and shown with
+  each result instead.</p>
+
+  <h2>What the total contains</h2>
+  <p>Annual total = tuition for your fee status + (rent + food + transit + phone/internet + other)
+  × the number of months you pay rent. Nothing is hidden in a coefficient; every dollar traces to a
+  line in <code>data/cities.json</code>.</p>
+
+  <h2>Calibration</h2>
+  {% if health.calibrated %}
+    <p>Predicted ranges currently cover <strong>{{ '%.0f'|format(health.coverage * 100) }}%</strong> of what
+    {{ health.n_reports }} real students reported spending. Coverage below about 70% means the ranges are
+    too narrow or centred wrong; coverage near 100% with a large error means they are too wide to be useful.</p>
+  {% else %}
+    <p class="warn">These ranges have never been checked against what anyone actually pays. Until they are,
+    the index demonstrates a method rather than offering advice. Run <code>python cli.py calibrate</code>
+    once survey responses exist.</p>
+  {% endif %}
+
+  <h2>Degree strength</h2>
+  <p>The biggest part of the index score. For each university and degree it uses a 0–100 strength figure
+  taken from a published subject ranking (QS by Subject, THE by subject, or Maclean's program rankings),
+  with its source attached. Where no subject figure is on file yet, it falls back to the university's
+  overall position on the list — a much weaker signal, and every result that uses it says so.</p>
+  <p>Salary and job outlook are shown for the chosen degree but play no part in the ranking: they describe
+  the degree, not the university, so they are identical for every school on the list.</p>
+
+  <h2>The index score</h2>
+  <p>Four components, each scored from 0 to 1: degree strength, admission fit (a logistic curve over the gap between your
+  average and the published cutoff), cost fit (how comfortably tuition sits inside your tuition budget — anything over it is left out entirely), and
+  preference fit (co-op, city size, and crime if you asked for it). They are combined with weights that are currently
+  <strong>{{ weights.source }}</strong>.
+  {% if weights.source != 'learned' %}
+  Hand-set weights are opinions: somebody picked numbers that felt right. Once there are labelled choices
+  to fit them to, <code>train_weights.py</code> replaces them and this line changes.
+  {% else %}
+  Fitted to {{ weights.n_labels }} labelled choices on {{ weights.fitted_on }}.
+  {% endif %}</p>
+
+  <h2>Rent</h2>
+  <p>Each city has one published 1-bedroom average. The studio range is that figure, from 15% below it to
+  20% above, because rents skew upward. Fifteen cities have their own figure; Waterloo borrows Kitchener's
+  (the adjacent city, and far closer than Ontario's provincial average); Guelph, Sherbrooke and Fredericton
+  fall back to their provincial average and say so on the card.</p>
+  <p>Shared and private rooms are not in that source. They are <em>derived</em> from the 1-bedroom figure —
+  55% for your own room in a shared place, 40% for a shared room — and every card that uses them says the
+  number was derived rather than measured. Real listing samples would replace this, with the sample size
+  recorded.</p>
+  <p>Distance from campus changes transit but not rent, because the source publishes one city-wide average
+  with no campus-distance split. Inventing a discount for living further out would be a guess dressed as
+  data.</p>
+
+  <h2>Food</h2>
+  <p>Groceries come from a provincial table of single-person monthly costs, so every city in the same
+  province carries the same range — Saskatoon and Regina cannot differ here, and a city that is dearer than
+  its province will be understated. It covers <em>groceries only</em>: restaurants and takeaway are not
+  counted anywhere in the estimate, and the card says so.</p>
+
+  <h2>Eating out</h2>
+  <p>A full meal out is priced at $20–30 and multiplied by the meals per week you enter (times 4.33 weeks a
+  month). Enter zero and the line disappears rather than showing as $0. The meal price is one national
+  figure applied everywhere, so it understates Vancouver and Toronto and overstates the Prairies and
+  Atlantic Canada — city-level prices would fix that.</p>
+
+  <h2>Transit and the U-Pass</h2>
+  <p>Many Canadian universities charge a mandatory U-Pass in student fees, so transit is not a separate
+  monthly cost for their students. Where that is confirmed for a school, the transit line reads "covered by
+  the U-Pass in student fees" and drops out of the living-cost total. Where it has not been checked, the
+  city's ordinary fare estimate is used, which may overstate the real cost. Only the University of
+  Saskatchewan is confirmed so far.</p>
+  <p>One gap worth stating: the tuition figures here are tuition, not mandatory student fees. The U-Pass fee
+  itself, along with other compulsory fees, is not yet modelled on either side.</p>
+
+  <h2>Crime</h2>
+  <p>Off unless you ask for it. When you do, the city's Crime Severity Index — the Statistics Canada 2024
+  figures, with violent crime shown alongside — is compared with a national baseline and folded into
+  preference fit. Fifteen of the nineteen cities appear in the published table; the other four (Victoria,
+  Quebec City, Sherbrooke, Fredericton) have no figure, and crime is left out of their score rather than
+  guessed at. Two things worth saying plainly: it is a <em>city-wide</em> figure, so it says very little
+  about the specific neighbourhood you would live in; and it counts reported crime, which is not the same
+  as your risk as a student. Use it to notice a large difference between cities, not a small one.</p>
+
+  <h2>Co-op</h2>
+  <p>Ticking "co-op is a must" drops any program without co-op and nudges the rest by the university's
+  position on a co-op strength list. That list arrived without a publisher or a methodology, so it is
+  treated as a weak signal: being on it lifts a school a little, being absent from it costs nothing.
+  CEWIL Canada placement figures, or each school's own co-op statistics, would replace it properly.</p>
+
+  <h2>Expiry</h2>
+  <p>Every figure carries a check-by date {{ expiry }} months after it was verified. Past that it is marked
+  stale rather than quietly presented as current, because the dangerous moment for a tool like this is six
+  months after its author stops maintaining it.</p>
+
+  <div class="rule"></div>
+
+  <h2>Becoming a doctor</h2>
+  <p>Canada has no MBBS. Doctors earn an MD, usually after completing an undergraduate degree; surgery is a
+  residency after that. Most Canadian medical schools admit few or no international students. The
+  "pre-med pathway" option ranks the undergraduate degrees students commonly take first, and says this at
+  the top of the results.</p>
+
+  <h2>What this cannot tell you</h2>
+  <ul>
+    <li>Your actual admission odds — the cutoff is a published minimum, not a prediction.</li>
+    <li>Scholarships, bursaries or assistantships, none of which are modelled.</li>
+    <li>Mandatory student fees — health plans, athletics, the U-Pass itself — which sit outside the tuition
+      figure and are not counted anywhere yet.</li>
+    <li>Whether you will like the place. Cost is one input among many.</li>
+  </ul>
+</div>
+</body>
+</html>

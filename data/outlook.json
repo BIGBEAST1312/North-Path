@@ -1,0 +1,85 @@
+{
+  "_note": "Career context per degree group, transcribed from University Magazine's 2026 table (a secondary source). Shown as context only; it does not affect the ranking, because it is the same for every university offering the degree. Replace with Statistics Canada graduate-outcome data (median income two years after graduation, by field) and set verified to true.",
+  "groups": {
+    "business": {
+      "label": "Business / Commerce",
+      "salary_low": 49000,
+      "salary_high": 75000,
+      "job_outlook": "Moderate to good",
+      "enrolment_trend": "Growing",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    },
+    "cs": {
+      "label": "Computer Science",
+      "salary_low": 61000,
+      "salary_high": 80000,
+      "job_outlook": "Very good",
+      "enrolment_trend": "Fastest growing",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    },
+    "nursing": {
+      "label": "Nursing",
+      "salary_low": 66000,
+      "salary_high": 96000,
+      "job_outlook": "Excellent",
+      "enrolment_trend": "Growing",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    },
+    "engineering": {
+      "label": "Engineering",
+      "salary_low": 59000,
+      "salary_high": 75000,
+      "job_outlook": "Good",
+      "enrolment_trend": "Growing",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    },
+    "psychology": {
+      "label": "Psychology",
+      "salary_low": 40000,
+      "salary_high": 55000,
+      "job_outlook": "Moderate (BA)",
+      "enrolment_trend": "Stable",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    },
+    "education": {
+      "label": "Education",
+      "salary_low": 55000,
+      "salary_high": 65000,
+      "job_outlook": "Good (improving)",
+      "enrolment_trend": "Stable",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    },
+    "sciences": {
+      "label": "Sciences (Biology / Chemistry)",
+      "salary_low": 40000,
+      "salary_high": 55000,
+      "job_outlook": "Balanced",
+      "enrolment_trend": "Stable",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    },
+    "arts": {
+      "label": "Arts & Humanities",
+      "salary_low": 40000,
+      "salary_high": 55000,
+      "job_outlook": "Limited",
+      "enrolment_trend": "Declining",
+      "source_url": "https://www.universitymagazine.ca/most-popular-undergraduate-degrees-in-canada/",
+      "as_of": "2026-09-21",
+      "verified": false
+    }
+  }
+}

@@ -1,0 +1,2376 @@
+{
+  "_note": "Cost anchors per city. EVERY figure is an unverified placeholder generated from a size band, not from any source. Replace each with a real figure, fill source_url and as_of, set verified to true. Crime: 15 cities carry the 2024 Statistics Canada Crime Severity Index; 4 (Victoria, Quebec City, Sherbrooke, Fredericton) are not in the published table and are scored as unknown, not as average. Rent now comes from a supplied 1-bedroom average per city: studio ranges are that figure (-15%/+20%); shared and private rooms are DERIVED from it by ratio and labelled as derived. Near and far carry the same rent because the source has no campus-distance split. Food comes from a supplied provincial grocery table (single person, monthly) — provincial, not city-level, and groceries only: meals out are not counted anywhere yet. `meal_out` is the price of one full meal out, multiplied by the meals-per-week the student enters to give an eating-out line. Groceries stay separate.",
+  "schema_version": 3,
+  "default_expiry_months": 6,
+  "housing_types": {
+    "shared_room": "Sharing a bedroom with someone else",
+    "private_room": "Own bedroom in a shared house or apartment",
+    "studio": "Own self-contained studio or one-bedroom"
+  },
+  "cities": [
+    {
+      "city": "Toronto",
+      "province": "ON",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 820.0,
+          "high": 1150.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Toronto 1-BR average $2,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 820.0,
+          "high": 1150.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Toronto 1-BR average $2,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 1120.0,
+          "high": 1580.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Toronto 1-BR average $2,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 1120.0,
+          "high": 1580.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Toronto 1-BR average $2,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 2040.0,
+          "high": 2880.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Toronto 1-BR average $2,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 2040.0,
+          "high": 2880.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Toronto 1-BR average $2,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 370,
+          "high": 500,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Ontario single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 68.65,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 99.82,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Toronto. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Vancouver",
+      "province": "BC",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 880.0,
+          "high": 1250.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Vancouver 1-BR average $2,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 880.0,
+          "high": 1250.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Vancouver 1-BR average $2,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 1220.0,
+          "high": 1720.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Vancouver 1-BR average $2,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 1220.0,
+          "high": 1720.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Vancouver 1-BR average $2,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 2210.0,
+          "high": 3120.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Vancouver 1-BR average $2,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 2210.0,
+          "high": 3120.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Vancouver 1-BR average $2,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 400,
+          "high": 550,
+          "n": 0,
+          "source": "Supplied grocery-cost table: British Columbia single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 92.93,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 96.4,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Vancouver. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Montreal",
+      "province": "QC",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 560.0,
+          "high": 790.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Montreal 1-BR average $1,650 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 560.0,
+          "high": 790.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Montreal 1-BR average $1,650 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 770.0,
+          "high": 1090.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Montreal 1-BR average $1,650 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 770.0,
+          "high": 1090.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Montreal 1-BR average $1,650 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1400.0,
+          "high": 1980.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Montreal 1-BR average $1,650 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1400.0,
+          "high": 1980.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Montreal 1-BR average $1,650 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 330,
+          "high": 460,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Quebec single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 75.72,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 112.51,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Montreal. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Edmonton",
+      "province": "AB",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 480.0,
+          "high": 670.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Edmonton 1-BR average $1,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 480.0,
+          "high": 670.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Edmonton 1-BR average $1,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 650.0,
+          "high": 920.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Edmonton 1-BR average $1,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 650.0,
+          "high": 920.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Edmonton 1-BR average $1,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1190.0,
+          "high": 1680.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Edmonton 1-BR average $1,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1190.0,
+          "high": 1680.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Edmonton 1-BR average $1,400 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 350,
+          "high": 480,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Alberta single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 109.27,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 121.98,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Edmonton. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Waterloo",
+      "province": "ON",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 580.0,
+          "high": 820.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): $1,700 for Kitchener, the adjacent city — Waterloo is not listed separately City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 580.0,
+          "high": 820.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): $1,700 for Kitchener, the adjacent city — Waterloo is not listed separately City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 790.0,
+          "high": 1120.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): $1,700 for Kitchener, the adjacent city — Waterloo is not listed separately City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 790.0,
+          "high": 1120.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): $1,700 for Kitchener, the adjacent city — Waterloo is not listed separately City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1440.0,
+          "high": 2040.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): $1,700 for Kitchener, the adjacent city — Waterloo is not listed separately City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1440.0,
+          "high": 2040.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): $1,700 for Kitchener, the adjacent city — Waterloo is not listed separately City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 370,
+          "high": 500,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Ontario single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 72.68,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 91.4,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Waterloo Region. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Hamilton",
+      "province": "ON",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 600.0,
+          "high": 840.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Hamilton 1-BR average $1,750 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 600.0,
+          "high": 840.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Hamilton 1-BR average $1,750 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 820.0,
+          "high": 1160.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Hamilton 1-BR average $1,750 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 820.0,
+          "high": 1160.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Hamilton 1-BR average $1,750 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1490.0,
+          "high": 2100.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Hamilton 1-BR average $1,750 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1490.0,
+          "high": 2100.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Hamilton 1-BR average $1,750 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 370,
+          "high": 500,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Ontario single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 66.15,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 85.89,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Hamilton. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Calgary",
+      "province": "AB",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 540.0,
+          "high": 770.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Calgary 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 540.0,
+          "high": 770.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Calgary 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 750.0,
+          "high": 1060.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Calgary 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 750.0,
+          "high": 1060.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Calgary 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1360.0,
+          "high": 1920.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Calgary 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1360.0,
+          "high": 1920.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Calgary 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 350,
+          "high": 480,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Alberta single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 63.27,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 78.53,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Calgary. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "London",
+      "province": "ON",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 540.0,
+          "high": 770.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): London 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 540.0,
+          "high": 770.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): London 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 750.0,
+          "high": 1060.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): London 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 750.0,
+          "high": 1060.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): London 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1360.0,
+          "high": 1920.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): London 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1360.0,
+          "high": 1920.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): London 1-BR average $1,600 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 370,
+          "high": 500,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Ontario single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 65.89,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 81.84,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for London. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Halifax",
+      "province": "NS",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 580.0,
+          "high": 820.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Halifax 1-BR average $1,700 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 580.0,
+          "high": 820.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Halifax 1-BR average $1,700 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 790.0,
+          "high": 1120.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Halifax 1-BR average $1,700 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 790.0,
+          "high": 1120.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Halifax 1-BR average $1,700 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1440.0,
+          "high": 2040.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Halifax 1-BR average $1,700 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1440.0,
+          "high": 2040.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Halifax 1-BR average $1,700 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 350,
+          "high": 480,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Nova Scotia single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 74.19,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 94.45,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Halifax Regional Municipality. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Burnaby",
+      "province": "BC",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 680.0,
+          "high": 960.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Burnaby 1-BR average $2,000 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 680.0,
+          "high": 960.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Burnaby 1-BR average $2,000 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 940.0,
+          "high": 1320.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Burnaby 1-BR average $2,000 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 940.0,
+          "high": 1320.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Burnaby 1-BR average $2,000 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1700.0,
+          "high": 2400.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Burnaby 1-BR average $2,000 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1700.0,
+          "high": 2400.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Burnaby 1-BR average $2,000 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 400,
+          "high": 550,
+          "n": 0,
+          "source": "Supplied grocery-cost table: British Columbia single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 67.49,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 60.82,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Burnaby. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Ottawa",
+      "province": "ON",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 630.0,
+          "high": 890.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ottawa 1-BR average $1,850 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 630.0,
+          "high": 890.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ottawa 1-BR average $1,850 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 860.0,
+          "high": 1220.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ottawa 1-BR average $1,850 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 860.0,
+          "high": 1220.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ottawa 1-BR average $1,850 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1570.0,
+          "high": 2220.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ottawa 1-BR average $1,850 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1570.0,
+          "high": 2220.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ottawa 1-BR average $1,850 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 370,
+          "high": 500,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Ontario single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 55.75,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 67.44,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Ottawa. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Victoria",
+      "province": "BC",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 700.0,
+          "high": 980.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Victoria 1-BR average $2,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 700.0,
+          "high": 980.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Victoria 1-BR average $2,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 960.0,
+          "high": 1350.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Victoria 1-BR average $2,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 960.0,
+          "high": 1350.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Victoria 1-BR average $2,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1740.0,
+          "high": 2460.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Victoria 1-BR average $2,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1740.0,
+          "high": 2460.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Victoria 1-BR average $2,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 400,
+          "high": 550,
+          "n": 0,
+          "source": "Supplied grocery-cost table: British Columbia single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      }
+    },
+    {
+      "city": "Guelph",
+      "province": "ON",
+      "size_band": "small",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 700.0,
+          "high": 980.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ontario provincial 1-BR average $2,050 — no figure for Guelph itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 700.0,
+          "high": 980.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ontario provincial 1-BR average $2,050 — no figure for Guelph itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 960.0,
+          "high": 1350.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ontario provincial 1-BR average $2,050 — no figure for Guelph itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 960.0,
+          "high": 1350.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ontario provincial 1-BR average $2,050 — no figure for Guelph itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1740.0,
+          "high": 2460.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ontario provincial 1-BR average $2,050 — no figure for Guelph itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1740.0,
+          "high": 2460.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Ontario provincial 1-BR average $2,050 — no figure for Guelph itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 57,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 50,
+          "high": 95,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 370,
+          "high": 500,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Ontario single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 110,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 150,
+          "high": 350,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 56.0,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 77.56,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Guelph. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Saskatoon",
+      "province": "SK",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 390.0,
+          "high": 550.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Saskatoon 1-BR average $1,150 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 390.0,
+          "high": 550.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Saskatoon 1-BR average $1,150 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 540.0,
+          "high": 760.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Saskatoon 1-BR average $1,150 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 540.0,
+          "high": 760.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Saskatoon 1-BR average $1,150 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 980.0,
+          "high": 1380.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Saskatoon 1-BR average $1,150 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 980.0,
+          "high": 1380.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Saskatoon 1-BR average $1,150 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 330,
+          "high": 450,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Saskatchewan single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 117.49,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 159.83,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Saskatoon. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Quebec City",
+      "province": "QC",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 370.0,
+          "high": 530.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec City 1-BR average $1,100 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 370.0,
+          "high": 530.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec City 1-BR average $1,100 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 510.0,
+          "high": 730.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec City 1-BR average $1,100 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 510.0,
+          "high": 730.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec City 1-BR average $1,100 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 940.0,
+          "high": 1320.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec City 1-BR average $1,100 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 940.0,
+          "high": 1320.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec City 1-BR average $1,100 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 330,
+          "high": 460,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Quebec single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      }
+    },
+    {
+      "city": "Sherbrooke",
+      "province": "QC",
+      "size_band": "small",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 460.0,
+          "high": 650.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec provincial 1-BR average $1,350 — no figure for Sherbrooke itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 460.0,
+          "high": 650.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec provincial 1-BR average $1,350 — no figure for Sherbrooke itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 630.0,
+          "high": 890.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec provincial 1-BR average $1,350 — no figure for Sherbrooke itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 630.0,
+          "high": 890.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec provincial 1-BR average $1,350 — no figure for Sherbrooke itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1150.0,
+          "high": 1620.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec provincial 1-BR average $1,350 — no figure for Sherbrooke itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1150.0,
+          "high": 1620.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Quebec provincial 1-BR average $1,350 — no figure for Sherbrooke itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 57,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 50,
+          "high": 95,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 330,
+          "high": 460,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Quebec single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 110,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 150,
+          "high": 350,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      }
+    },
+    {
+      "city": "Winnipeg",
+      "province": "MB",
+      "size_band": "large",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 410.0,
+          "high": 580.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Winnipeg 1-BR average $1,200 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 410.0,
+          "high": 580.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Winnipeg 1-BR average $1,200 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 560.0,
+          "high": 790.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Winnipeg 1-BR average $1,200 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 560.0,
+          "high": 790.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): Winnipeg 1-BR average $1,200 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 1020.0,
+          "high": 1440.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Winnipeg 1-BR average $1,200 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 1020.0,
+          "high": 1440.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): Winnipeg 1-BR average $1,200 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 105,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 110,
+          "high": 175,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 330,
+          "high": 450,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Manitoba single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 200,
+          "high": 450,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 130.93,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 199.11,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for Winnipeg. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "St. John's",
+      "province": "NL",
+      "size_band": "medium",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 360.0,
+          "high": 500.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): St. John's 1-BR average $1,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 360.0,
+          "high": 500.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): St. John's 1-BR average $1,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 490.0,
+          "high": 690.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): St. John's 1-BR average $1,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 490.0,
+          "high": 690.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): St. John's 1-BR average $1,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 890.0,
+          "high": 1260.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): St. John's 1-BR average $1,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 890.0,
+          "high": 1260.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): St. John's 1-BR average $1,050 City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 72,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 75,
+          "high": 120,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 370,
+          "high": 510,
+          "n": 0,
+          "source": "Supplied grocery-cost table: Newfoundland and Labrador single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 115,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 180,
+          "high": 400,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      },
+      "safety": {
+        "crime_severity_index": {
+          "value": 76.95,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "violent_crime_severity_index": {
+          "value": 94.16,
+          "source": "Statistics Canada Crime Severity Index 2024, via Wikipedia 'Crime in Canada' city table",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "note": "Published for St. John's. City-wide (census metropolitan area or municipality) — says little about one neighbourhood, and counts reported crime, not your risk."
+      }
+    },
+    {
+      "city": "Fredericton",
+      "province": "NB",
+      "size_band": "small",
+      "costs": {
+        "rent_shared_room_near": {
+          "low": 390.0,
+          "high": 550.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): New Brunswick provincial 1-BR average $1,150 — no figure for Fredericton itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_shared_room_far": {
+          "low": 390.0,
+          "high": 550.0,
+          "n": 0,
+          "source": "Derived, not measured: 40% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): New Brunswick provincial 1-BR average $1,150 — no figure for Fredericton itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_near": {
+          "low": 540.0,
+          "high": 760.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): New Brunswick provincial 1-BR average $1,150 — no figure for Fredericton itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_private_room_far": {
+          "low": 540.0,
+          "high": 760.0,
+          "n": 0,
+          "source": "Derived, not measured: 55% of the 1-BR average. WealthNorth 1-bedroom rent table (supplied 2026-09-22): New Brunswick provincial 1-BR average $1,150 — no figure for Fredericton itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_near": {
+          "low": 980.0,
+          "high": 1380.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): New Brunswick provincial 1-BR average $1,150 — no figure for Fredericton itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "rent_studio_far": {
+          "low": 980.0,
+          "high": 1380.0,
+          "n": 0,
+          "source": "WealthNorth 1-bedroom rent table (supplied 2026-09-22): New Brunswick provincial 1-BR average $1,150 — no figure for Fredericton itself City-wide average; no near/far split in the source.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "transit_near": {
+          "low": 0,
+          "high": 57,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "transit_far": {
+          "low": 50,
+          "high": 95,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "food": {
+          "low": 340,
+          "high": 470,
+          "n": 0,
+          "source": "Supplied grocery-cost table: New Brunswick single-person monthly groceries. Provincial figure, not city-level. Groceries only — meals out are not included.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        },
+        "phone_internet": {
+          "low": 50,
+          "high": 110,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "other": {
+          "low": 150,
+          "high": 350,
+          "n": 0,
+          "source_url": null,
+          "as_of": null,
+          "verified": false
+        },
+        "meal_out": {
+          "low": 20,
+          "high": 30,
+          "n": 0,
+          "source": "Supplied estimate: a full meal out costs $20–30. One national figure applied to every city — not city-adjusted, so it understates Vancouver and Toronto and overstates the Prairies and Atlantic Canada.",
+          "source_url": null,
+          "as_of": "2026-09-22",
+          "verified": false
+        }
+      }
+    }
+  ]
+}

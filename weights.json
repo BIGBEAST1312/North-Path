@@ -1,0 +1,13 @@
+{
+  "_note": "Ranker weights. Hand-set: degree strength dominates, then admission, cost and preferences. Tuition is also a hard filter, so cost_fit only nudges among affordable options. These are opinions, not findings; train_weights.py replaces them once there are labelled choices.",
+  "source": "hand-set",
+  "fitted_on": null,
+  "n_labels": 0,
+  "weights": {
+    "degree_fit": 0.5,
+    "admission_fit": 0.2,
+    "cost_fit": 0.15,
+    "preference_fit": 0.15
+  },
+  "bias": 0.0
+}

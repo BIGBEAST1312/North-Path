@@ -1,0 +1,534 @@
+{
+  "_note": "25 universities in the order of a compiled list blending THE, QS and EduRank rankings — not one official ranking. `tier` only drives placeholder numbers. `upass`: true means the university charges a U-Pass in student fees and transit is not a separate living cost. null means unchecked — the city's fare estimate is used instead.",
+  "universities": [
+    {
+      "id": "utoronto",
+      "name": "University of Toronto",
+      "city": "Toronto",
+      "list_position": 1,
+      "tier": "high",
+      "coop_strength": {
+        "value": 84,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": false,
+        "source": "St. George has no U-Pass (students rejected one in a 2018 referendum; UTSU said in Jan 2025 it wasn't coming soon). U of T Mississauga campus does have a MiWay U-Pass. (checked 2026-09-23)",
+        "source_url": "https://thevarsity.ca/2025/09/21/op-ed-lets-stop-talking-about-the-u-pass/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "ubc",
+      "name": "University of British Columbia",
+      "city": "Vancouver",
+      "list_position": 2,
+      "tier": "high",
+      "coop_strength": {
+        "value": 92,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "U-Pass BC mandatory for UBC Vancouver students, $191.40 per term (Winter Term 1, 2026). (checked 2026-09-23)",
+        "source_url": "https://www.ams.ubc.ca/support-services/u-pass/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "British Columbia. tuition_dom = Canadian citizen/PR rate."
+    },
+    {
+      "id": "mcgill",
+      "name": "McGill University",
+      "city": "Montreal",
+      "list_position": 3,
+      "tier": "high",
+      "coop_strength": {
+        "value": 52,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": false,
+        "source": "Montreal has no university-wide transit pass; full-time students can buy STM/ARTM monthly passes at a 40% reduced student fare (optional, photo OPUS card). (checked 2026-09-23)",
+        "source_url": "https://www.artm.quebec/en/promotionalfares/students/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Quebec. tuition_dom = Quebec-resident rate ($103.92/credit in 2026-27); Canadians from other provinces pay much more (e.g. $432.85/credit for new students). Admission uses the CEGEP R-score, so % cutoffs are rarely published."
+    },
+    {
+      "id": "ualberta",
+      "name": "University of Alberta",
+      "city": "Edmonton",
+      "list_position": 4,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 80,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "City of Edmonton lists U of A as a U-Pass institution; 2026/2027 price $182 per term. (checked 2026-09-23)",
+        "source_url": "https://www.edmonton.ca/ets/universal-transit-pass-upass",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Alberta. tuition_dom = Canadian citizen/PR rate."
+    },
+    {
+      "id": "uwaterloo",
+      "name": "University of Waterloo",
+      "city": "Waterloo",
+      "list_position": 5,
+      "tier": "high",
+      "coop_strength": {
+        "value": 100,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "GRT UPass $137.70 in Fall 2026 incidental fees, compulsory for full-time undergrads on Waterloo Region campuses. (checked 2026-09-23)",
+        "source_url": "https://uwaterloo.ca/finance/undergraduate-incidental-fees-fall-2026",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "ucalgary",
+      "name": "University of Calgary",
+      "city": "Calgary",
+      "list_position": 6,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 68,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "Calendar P.3.4.5: UPass is a compulsory per-term fee for full-time students (City of Calgary universal transit pass). (checked 2026-09-23)",
+        "source_url": "https://calendar.ucalgary.ca/pages/84c7388041b44cbdb8de94ee3e62c9c8",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Alberta. tuition_dom = Canadian citizen/PR rate."
+    },
+    {
+      "id": "umontreal",
+      "name": "Université de Montréal",
+      "city": "Montreal",
+      "list_position": 7,
+      "tier": "mid",
+      "upass": {
+        "value": false,
+        "source": "Montreal has no university-wide transit pass; full-time students can buy STM/ARTM monthly passes at a 40% reduced student fare (optional, photo OPUS card). (checked 2026-09-23)",
+        "source_url": "https://www.artm.quebec/en/promotionalfares/students/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Quebec. tuition_dom = Quebec-resident rate ($103.92/credit in 2026-27); Canadians from other provinces pay much more (e.g. $432.85/credit for new students). Admission uses the CEGEP R-score, so % cutoffs are rarely published."
+    },
+    {
+      "id": "sfu",
+      "name": "Simon Fraser University",
+      "city": "Burnaby",
+      "list_position": 8,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 96,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "U-Pass BC fee $191.40/term, mandatory for eligible students (Fall 2026 calendar). (checked 2026-09-23)",
+        "source_url": "https://www.sfu.ca/students/calendar/fees-and-regulations/tuition-fees/undergraduate.html",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "British Columbia. tuition_dom = Canadian citizen/PR rate."
+    },
+    {
+      "id": "mcmaster",
+      "name": "McMaster University",
+      "city": "Hamilton",
+      "list_position": 9,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 78,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "HSR Bus Pass, 2026/27 undergraduate fee $252.05; mandatory (no opt-out) for full-time undergrads. (checked 2026-09-23)",
+        "source_url": "https://msumcmaster.ca/info/hsr-bus-pass/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "western",
+      "name": "Western University",
+      "city": "London",
+      "list_position": 10,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 46,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "'Transit Pass' fee ($323.55) is a mandatory line in the 2026-27 full-time fee schedule (LTC bus pass). (checked 2026-09-23)",
+        "source_url": "https://registrar.uwo.ca/student_finances/fees_refunds/2026-27-UGRD-Fee-Schedule---FT-International1.pdf",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "uottawa",
+      "name": "University of Ottawa",
+      "city": "Ottawa",
+      "list_position": 11,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 90,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "U-Pass (OC Transpo/STO) is mandatory for all full-time students. (checked 2026-09-23)",
+        "source_url": "https://www.uottawa.ca/campus-life/upass",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "ulaval",
+      "name": "Université Laval",
+      "city": "Quebec City",
+      "list_position": 12,
+      "tier": "low",
+      "upass": {
+        "value": true,
+        "source": "LPU (laissez-passer universitaire, RTC transit pass) fee $159.76/term is a mandatory line in 2026-27 fees. (checked 2026-09-23)",
+        "source_url": "https://www.ulaval.ca/en/academics/tuition/international-students/undergraduate-programs/fall-2026-winter-2027",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Quebec. tuition_dom = Quebec-resident rate ($103.92/credit in 2026-27); Canadians from other provinces pay much more (e.g. $432.85/credit for new students). Admission uses the CEGEP R-score, so % cutoffs are rarely published."
+    },
+    {
+      "id": "york",
+      "name": "York University",
+      "city": "Toronto",
+      "list_position": 13,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 64,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": false,
+        "source": "York's transportation page points students to the TTC's optional Post-Secondary monthly pass; no universal pass in fees. (checked 2026-09-23)",
+        "source_url": "https://www.yorku.ca/transportation/ttc-metropass/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "dal",
+      "name": "Dalhousie University",
+      "city": "Halifax",
+      "list_position": 14,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 74,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "Mandatory for full-time undergrad, grad and professional students (not Agriculture campus); $177.93 for Fall/Winter 2026/27. (checked 2026-09-23)",
+        "source_url": "https://www.dal.ca/life-at-dal/upass.html",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Nova Scotia. tuition_dom = domestic rate; Nova Scotians may also get the NS Student Bursary (up to $1,283/yr)."
+    },
+    {
+      "id": "umanitoba",
+      "name": "University of Manitoba",
+      "city": "Winnipeg",
+      "list_position": 15,
+      "tier": "low",
+      "coop_strength": {
+        "value": 44,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "U-Pass fee $238.70 per Fall/Winter term for full-time UMSU members (2026-27). (checked 2026-09-23)",
+        "source_url": "https://umanitoba.ca/registrar/tuition-fees/undergraduate",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Manitoba. tuition_dom = Canadian citizen/PR rate."
+    },
+    {
+      "id": "uvic",
+      "name": "University of Victoria",
+      "city": "Victoria",
+      "list_position": 16,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 94,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "UVSS U-Pass charged automatically to undergrads with on-campus courses, $81 per term (Fall 2026); limited opt-outs. (checked 2026-09-23)",
+        "source_url": "https://uvss.ca/u-pass/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "British Columbia. tuition_dom = Canadian citizen/PR rate."
+    },
+    {
+      "id": "usask",
+      "name": "University of Saskatchewan",
+      "city": "Saskatoon",
+      "list_position": 17,
+      "tier": "low",
+      "coop_strength": {
+        "value": 66,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "U-PASS transit fee for full-time on-campus students, $100.94 per term in Fall 2026 and Winter 2027. (checked 2026-09-23)",
+        "source_url": "https://students.usask.ca/money/tuition-fees/undergraduate-tuition.php",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Saskatchewan. tuition_dom = Canadian citizen/PR rate."
+    },
+    {
+      "id": "carleton",
+      "name": "Carleton University",
+      "city": "Ottawa",
+      "list_position": 18,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 88,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "UPASS Fall/Winter ($240.67 per term) is a compulsory fee in the 2026-27 full-time fee table (OC Transpo). (checked 2026-09-23)",
+        "source_url": "https://carleton.ca/studentaccounts/tuition-fees/fw-ug/f26w27-ug-ontario/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "uguelph",
+      "name": "University of Guelph",
+      "city": "Guelph",
+      "list_position": 19,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 50,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "'Bus Pass' compulsory fee ($166.35/semester) in the 2026-27 undergraduate fee list (Guelph Transit). (checked 2026-09-23)",
+        "source_url": "https://www.uoguelph.ca/registrar/finances-fees/tuition-fees/guelph-undergrad",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "concordia",
+      "name": "Concordia University",
+      "city": "Montreal",
+      "list_position": 20,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 86,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": false,
+        "source": "Montreal has no university-wide transit pass; full-time students can buy STM/ARTM monthly passes at a 40% reduced student fare (optional, photo OPUS card). (checked 2026-09-23)",
+        "source_url": "https://www.artm.quebec/en/promotionalfares/students/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Quebec. tuition_dom = Quebec-resident rate ($103.92/credit in 2026-27); Canadians from other provinces pay much more (e.g. $432.85/credit for new students). Admission uses the CEGEP R-score, so % cutoffs are rarely published."
+    },
+    {
+      "id": "uqam",
+      "name": "Université du Québec à Montréal",
+      "city": "Montreal",
+      "list_position": 21,
+      "tier": "low",
+      "upass": {
+        "value": false,
+        "source": "Montreal has no university-wide transit pass; full-time students can buy STM/ARTM monthly passes at a 40% reduced student fare (optional, photo OPUS card). (checked 2026-09-23)",
+        "source_url": "https://www.artm.quebec/en/promotionalfares/students/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Quebec. tuition_dom = Quebec-resident rate ($103.92/credit in 2026-27); Canadians from other provinces pay much more (e.g. $432.85/credit for new students). Admission uses the CEGEP R-score, so % cutoffs are rarely published."
+    },
+    {
+      "id": "mun",
+      "name": "Memorial University of Newfoundland",
+      "city": "St. John's",
+      "list_position": 22,
+      "tier": "low",
+      "coop_strength": {
+        "value": 72,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": null,
+        "source": "Left blank: students voted a proposed U-Pass down in 2019 and no newer program turned up, but nothing current confirms either way. (checked 2026-09-23)",
+        "source_url": "https://www.cbc.ca/news/canada/newfoundland-labrador/upass-vote-results-1.5047243",
+        "as_of": null,
+        "verified": false
+      },
+      "tuition_note": "Newfoundland and Labrador. NL residents and other Canadians pay the same 2026-27 rate."
+    },
+    {
+      "id": "usherbrooke",
+      "name": "Université de Sherbrooke",
+      "city": "Sherbrooke",
+      "list_position": 23,
+      "tier": "low",
+      "coop_strength": {
+        "value": 98,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": true,
+        "source": "Students at the Sherbrooke campuses ride STS buses by validating their student card, funded by the university plus a mandatory student contribution. (checked 2026-09-23)",
+        "source_url": "https://www.usherbrooke.ca/smsp/mobilite-durable-et-stationnement/mobilite-durable/transport-en-commun/etudiants",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Quebec. tuition_dom = Quebec-resident rate ($103.92/credit in 2026-27); Canadians from other provinces pay much more (e.g. $432.85/credit for new students). Admission uses the CEGEP R-score, so % cutoffs are rarely published."
+    },
+    {
+      "id": "tmu",
+      "name": "Toronto Metropolitan University",
+      "city": "Toronto",
+      "list_position": 24,
+      "tier": "mid",
+      "coop_strength": {
+        "value": 62,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": false,
+        "source": "No transit-pass line among TMU's 2026-27 compulsory ancillary fees (TTC offers a discounted post-secondary monthly pass instead). (checked 2026-09-23)",
+        "source_url": "https://www.torontomu.ca/current-students/tuition-fees/undergraduate/",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "Ontario. tuition_dom = Ontario-resident rate; some programs charge other Canadians a little more."
+    },
+    {
+      "id": "unb",
+      "name": "University of New Brunswick",
+      "city": "Fredericton",
+      "list_position": 25,
+      "tier": "low",
+      "coop_strength": {
+        "value": 42,
+        "source": "Position on a 'top 30 Canadian universities for co-op and internship success' list supplied without a methodology or publisher; converted as 100 - 2 x (rank - 1). Treat as a weak signal — replace with CEWIL Canada placement figures or each school's own co-op statistics.",
+        "source_url": null,
+        "as_of": "2026-09-22",
+        "verified": false
+      },
+      "upass": {
+        "value": false,
+        "source": "2026-27 fee sheet charges a 'Bus Pass' ($180 Fall) to international students only; no transit-pass line for domestic students, so no universal U-Pass. (checked 2026-09-23)",
+        "source_url": "https://www.unb.ca/finance/_assets/documents/financial-services/fredericton-tuition/undergrad/fred_ug_compsci_ft.pdf",
+        "as_of": null,
+        "verified": true
+      },
+      "tuition_note": "New Brunswick. tuition_dom = domestic rate."
+    }
+  ]
+}

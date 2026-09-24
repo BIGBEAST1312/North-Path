@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>North Path — Program Index</title>
+<style>
+  :root{
+    --deep:#12281e;        /* page background */
+    --panel:#e3b23c;       /* results panel */
+    --cream:#f5efdc;       /* form panel */
+    --ink:#12281e;
+    --muted:#5f6b5f;
+    --gold:#c9a227;
+    --rule:#d9d0b4;
+    --warn:#8a4b12;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--deep);color:var(--ink);
+    font:15px/1.6 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif}
+  .shell{max-width:1180px;margin:0 auto;padding:26px 18px 60px;display:grid;grid-template-columns:1fr 1fr;gap:0}
+  @media(max-width:880px){.shell{grid-template-columns:1fr;padding:0 0 40px}}
+
+  /* ---------- left: the form ---------- */
+  .form-panel{background:var(--cream);padding:38px 40px 44px;border-top:5px solid var(--gold)}
+  @media(max-width:880px){.form-panel{padding:28px 20px 34px}}
+  .brand{display:flex;align-items:center;gap:14px;margin:0 0 6px}
+  .mark{width:44px;height:44px;flex:none;background:var(--deep);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-size:20px;
+    border:1px solid var(--gold);outline:3px solid var(--cream);outline-offset:-6px}
+  h1{font-size:25px;letter-spacing:.14em;margin:0;font-weight:600;text-transform:uppercase}
+  .kicker{font-style:italic;color:var(--muted);font-size:14px;margin:2px 0 0}
+  .lede{font-style:italic;font-size:17px;line-height:1.5;margin:22px 0 24px;color:#2b3b30;max-width:44ch}
+  .rule{height:1px;background:var(--rule);margin:0 0 22px}
+
+  .notice{background:#e8e2cc;border-left:3px solid var(--gold);padding:14px 16px;margin:0 0 30px;font-size:13.5px;line-height:1.55}
+  .notice b{letter-spacing:.02em}
+  .notice em{font-style:italic;color:#4a4736}
+  .notice .bang{color:var(--warn);font-weight:700;margin-right:6px}
+  .notice a{color:var(--ink)}
+
+  .ask{background:#e8e2cc;padding:14px 16px;margin:0 0 26px;border-left:3px solid var(--deep)}
+  .ask input{margin-top:2px}
+  .ask-note{font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.5}
+  .ask-read{font-size:12px;color:var(--ink);margin:8px 0 0;font-style:italic}
+  .section{margin:0 0 26px}
+  .section-head{display:flex;align-items:center;gap:10px;margin:0 0 16px;
+    border-left:3px solid var(--gold);padding-left:12px}
+  .section-num{color:var(--gold);font-weight:700;font-size:15px;letter-spacing:.06em}
+  .section-title{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.pair{grid-template-columns:1fr}}
+  label{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;font-weight:600}
+  input[type=number],input[type=text],select{
+    width:100%;padding:11px 12px;border:1px solid var(--rule);background:#fbf7e9;
+    color:var(--ink);font-size:15px;border-radius:2px;font-family:inherit}
+  input:focus,select:focus{outline:2px solid var(--gold);outline-offset:-1px}
+  .check{display:flex;align-items:center;gap:12px;margin:0 0 12px;cursor:pointer}
+  .check input{position:absolute;opacity:0;width:0;height:0}
+  .box{width:24px;height:24px;flex:none;border:1px solid var(--rule);background:#fbf7e9;
+    display:flex;align-items:center;justify-content:center;color:transparent;font-size:15px;font-weight:700}
+  .check input:checked + .box{background:var(--gold);border-color:var(--gold);color:var(--deep)}
+  .check input:focus-visible + .box{outline:2px solid var(--deep);outline-offset:2px}
+  .check-label{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .footnote{font-size:12px;color:var(--muted);margin:4px 0 26px;line-height:1.5}
+  button{width:100%;padding:16px;border:0;background:var(--deep);color:var(--cream);
+    font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;cursor:pointer;
+    border-bottom:4px solid var(--gold);font-family:inherit}
+  button:hover{background:#0c1d15}
+  .err{color:#9a2a2a;font-size:13.5px;margin:0 0 14px}
+
+  /* ---------- right: results ---------- */
+  .results{background:var(--panel);color:var(--deep);padding:38px 34px 44px}
+  @media(max-width:880px){.results{padding:30px 20px 36px}}
+  .results h2{font-size:27px;margin:0 0 26px;font-weight:600}
+  .match{display:flex;justify-content:space-between;gap:16px;padding:0 0 18px;margin:0 0 18px;
+    border-bottom:1px solid rgba(18,40,30,.22)}
+  .match:last-of-type{border-bottom:0}
+  .m-left{min-width:0}
+  .m-num{font-size:29px;color:#7d5a06;font-weight:700;line-height:1;margin:0 0 8px}
+  .m-name{font-size:16px;font-weight:700;margin:0 0 3px}
+  .m-prog{font-size:13px;color:rgba(18,40,30,.75);margin:0}
+  .m-right{text-align:right;flex:none}
+  .m-cap{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 2px}
+  .m-score{font-size:24px;font-weight:700;margin:0;line-height:1.1}
+  .m-cost{font-size:12px;color:rgba(18,40,30,.78);margin:3px 0 0}
+  .m-why{font-size:12.5px;color:rgba(18,40,30,.82);margin:10px 0 0;line-height:1.5}
+  .m-flag{font-size:12px;color:#7a3c06;margin:6px 0 0;line-height:1.5}
+  .tag{display:inline-block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:2px 7px;border:1px solid rgba(18,40,30,.4);margin:8px 6px 0 0}
+
+  .methodology{position:relative;margin:34px 0 0}
+  .meth-tab{display:inline-block;background:var(--deep);color:var(--gold);font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:4px 10px;position:relative;top:1px}
+  .meth-box{border:1px solid var(--gold);background:var(--deep);color:var(--cream);padding:20px}
+  .meth-box p{font-style:italic;font-size:15px;line-height:1.55;margin:0}
+  .meth-by{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:14px 0 0}
+  .meth-box a{color:var(--gold)}
+
+  .figure{margin:26px 0 0;background:var(--deep);border:1px solid rgba(18,40,30,.35);padding:18px 18px 14px;text-align:center}
+  .fig-cap{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,239,220,.72);margin:12px 0 0}
+  .summary{background:rgba(18,40,30,.09);border-left:3px solid var(--deep);padding:14px 16px;margin:0 0 22px}
+  .summary-cap{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 6px;font-weight:700}
+  .summary p{font-size:14px;line-height:1.55;margin:0}
+  .summary-note{font-size:11px;color:rgba(18,40,30,.7);margin:8px 0 0 !important;line-height:1.5}
+  .living{background:rgba(18,40,30,.07);padding:10px 12px;margin:12px 0 0}
+  .living-cap{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 3px;font-weight:700}
+  .living-total{font-size:16px;font-weight:700;margin:0 0 4px}
+  .living-total span{font-size:12px;font-weight:400;color:rgba(18,40,30,.7)}
+  .living-parts{font-size:12px;color:rgba(18,40,30,.8);margin:3px 0 0;line-height:1.5}
+  .nomatch{background:var(--deep);color:var(--cream);padding:18px 20px;margin:0 0 22px}
+  .nomatch h3{font-size:18px;margin:0 0 8px;color:var(--gold)}
+  .nomatch p{font-size:14px;margin:0 0 6px;line-height:1.55}
+  .career{background:rgba(18,40,30,.08);border-left:3px solid var(--deep);padding:12px 14px;margin:0 0 22px}
+  .career-cap{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 4px;font-weight:700}
+  .career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0 0}
+  @media(max-width:480px){.career-grid{grid-template-columns:1fr}}
+  .career-grid b{display:block;font-size:15px}
+  .career-grid span{font-size:11px;color:rgba(18,40,30,.7)}
+  .career-src{font-size:11px;color:rgba(18,40,30,.7);margin:8px 0 0}
+  .career-src a{color:inherit}
+  .pathway{background:var(--deep);color:var(--cream);padding:14px 16px;margin:0 0 22px;font-size:13.5px;line-height:1.55}
+  .pathway b{color:var(--gold);display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px}
+  .empty{font-style:italic;font-size:15px;color:rgba(18,40,30,.82);line-height:1.6;margin:0 0 8px}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============ FORM ============ -->
+  <section class="form-panel">
+    <div class="brand">
+      <div class="mark serif">N</div>
+      <div>
+        <h1 class="serif">North Path</h1>
+        <p class="kicker serif">Program Index</p>
+      </div>
+    </div>
+
+    <p class="lede serif">Pick a degree. North Path ranks Canadian universities by how strong they are in it, whether you'd get in, what a year really costs, and the things you said matter.</p>
+    <div class="rule"></div>
+
+    {% if health.unverified %}
+    <div class="notice">
+      <span class="bang">!</span><b>Early data release.</b>
+      <em>All {{ health.unverified }} figures are unverified placeholders and the cost ranges have never been
+      checked against what real students pay. Demonstration of a method, not financial advice.</em>
+      <a href="/methodology">Read the methodology.</a>
+    </div>
+    {% elif not health.calibrated %}
+    <div class="notice">
+      <span class="bang">!</span><b>Sourced but untested.</b>
+      <em>Every figure has a source, but the ranges have not been compared against real spending.</em>
+      <a href="/methodology">Read the methodology.</a>
+    </div>
+    {% else %}
+    <div class="notice">
+      <b>Calibrated.</b>
+      <em>Ranges cover {{ '%.0f'|format(health.coverage * 100) }}% of what {{ health.n_reports }} students reported spending.</em>
+      <a href="/methodology">Read the methodology.</a>
+    </div>
+    {% endif %}
+
+    <form method="post">
+      {% if error %}<p class="err">{{ error }}</p>{% endif %}
+
+      {% if ai_enabled %}
+      <div class="ask">
+        <label for="query">Or describe your situation in a sentence</label>
+        <input id="query" name="query" type="text" value="{{ form.query }}"
+               placeholder="e.g. 78% average, about $30k a year for tuition, computer science with co-op, smaller city">
+        <p class="ask-note">This only fills in the fields below — every figure in the results comes from the data files, never from the assistant.</p>
+        {% if ai_note %}<p class="ask-read">{{ ai_note }}</p>{% endif %}
+      </div>
+      {% endif %}
+
+      <div class="section">
+        <div class="section-head">
+          <span class="section-num">01</span><span class="section-title">Academic profile</span>
+        </div>
+        <div class="pair">
+          <div>
+            <label for="average">Admission average (%)</label>
+            <input id="average" name="average" type="number" step="0.1" min="0" max="100" value="{{ form.average }}" required>
+          </div>
+          <div>
+            <label for="degree">Degree you want to study</label>
+            <select id="degree" name="degree">
+              {% for group, items in degree_groups.items() %}
+              <optgroup label="{{ group }}">
+                {% for d in items %}
+                <option value="{{ d.id }}" {% if form.degree == d.id %}selected{% endif %}>{{ d.name }}</option>
+                {% endfor %}
+              </optgroup>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <span class="section-num">02</span><span class="section-title">Financial allocation</span>
+        </div>
+        <p class="footnote" style="margin:-6px 0 14px">Tuition only. Universities over this amount are left out. Rent, food and other living costs are worked out for you and shown with each result.</p>
+        <div class="pair">
+          <div>
+            <label for="budget">Tuition budget per year (CAD)</label>
+            <input id="budget" name="budget" type="number" step="500" min="1" value="{{ form.budget }}" required>
+          </div>
+          <div>
+            <label for="status">Fee status</label>
+            <select id="status" name="status">
+              <option value="international" {% if form.status=='international' %}selected{% endif %}>International</option>
+              <option value="domestic" {% if form.status=='domestic' %}selected{% endif %}>Domestic</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <span class="section-num">03</span><span class="section-title">Environment &amp; logistics</span>
+        </div>
+        <div class="pair">
+          <div>
+            <label for="housing_type">Where you'll live</label>
+            <select id="housing_type" name="housing_type">
+              <option value="shared_room" {% if form.housing_type=='shared_room' %}selected{% endif %}>Shared room (sharing a bedroom)</option>
+              <option value="private_room" {% if form.housing_type=='private_room' %}selected{% endif %}>Own room in a shared place</option>
+              <option value="studio" {% if form.housing_type=='studio' %}selected{% endif %}>Own studio or one-bedroom</option>
+            </select>
+          </div>
+          <div>
+            <label for="proximity">Distance from campus</label>
+            <select id="proximity" name="proximity">
+              <option value="near" {% if form.proximity=='near' %}selected{% endif %}>Near campus (walk or short bus)</option>
+              <option value="far" {% if form.proximity=='far' %}selected{% endif %}>Further out (more transit)</option>
+            </select>
+          </div>
+          <div>
+            <label for="months">Months you'll pay rent</label>
+            <input id="months" name="months" type="number" min="1" max="12" value="{{ form.months }}">
+          </div>
+          <div>
+            <label for="meals_out">Meals out per week</label>
+            <input id="meals_out" name="meals_out" type="number" min="0" max="21" step="1" value="{{ form.meals_out }}">
+          </div>
+          <div>
+            <label for="city_size">City size preference</label>
+            <select id="city_size" name="city_size">
+              <option value="" {% if not form.city_size %}selected{% endif %}>No preference</option>
+              <option value="small" {% if form.city_size=='small' %}selected{% endif %}>Smaller city</option>
+              <option value="medium" {% if form.city_size=='medium' %}selected{% endif %}>Mid-sized</option>
+              <option value="large" {% if form.city_size=='large' %}selected{% endif %}>Large city</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="rule"></div>
+
+      <p class="footnote" style="margin:-14px 0 20px">Rent is a city-wide average, so distance changes your transit cost but not your rent here.</p>
+
+      <label class="check" for="coop">
+        <input id="coop" name="coop" type="checkbox" {% if form.coop %}checked{% endif %}>
+        <span class="box">&#10003;</span>
+        <span class="check-label">Co-op is a must</span>
+      </label>
+      <label class="check" for="crime_matters">
+        <input id="crime_matters" name="crime_matters" type="checkbox" {% if form.crime_matters %}checked{% endif %}>
+        <span class="box">&#10003;</span>
+        <span class="check-label">Crime rate matters to me</span>
+      </label>
+      <p class="footnote">Crime uses the city-wide Crime Severity Index and may not represent a specific neighbourhood. Left unticked, it plays no part in the ranking.</p>
+
+      <button type="submit">Rank my options</button>
+    </form>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section class="results">
+    <h2 class="serif">Your matches</h2>
+    <p class="m-prog" style="margin:-18px 0 20px">{{ degree.name }}</p>
+
+    {% if degree.notice %}
+    <div class="pathway"><b>Read this first</b>{{ degree.notice }}</div>
+    {% endif %}
+
+    {% if outlook %}
+    <div class="career">
+      <p class="career-cap">Career outlook · {{ outlook.label }}</p>
+      <div class="career-grid">
+        <div><b>${{ '{:,.0f}'.format(outlook.salary_low) }}–${{ '{:,.0f}'.format(outlook.salary_high) }}</b><span>starting salary</span></div>
+        <div><b>{{ outlook.job_outlook }}</b><span>job outlook</span></div>
+        <div><b>{{ outlook.enrolment_trend }}</b><span>enrolment trend</span></div>
+      </div>
+      <p class="career-src">Same for every university below, so it doesn't change the ranking.
+        Source: <a href="{{ outlook.source_url }}">University Magazine</a>, a secondary source{% if not outlook.verified %}, not yet checked against Statistics Canada{% endif %}.</p>
+    </div>
+    {% elif degree.kind == 'degree' %}
+    <div class="career"><p class="career-cap">Career outlook</p>
+      <p class="career-src" style="margin:0">No salary or outlook data for {{ degree.name }} yet.</p></div>
+    {% endif %}
+
+    {% if summary %}
+    <div class="summary">
+      <p class="summary-cap">Assistant summary</p>
+      <p>{{ summary }}</p>
+      <p class="summary-note">Written from the results below. It cannot add figures of its own — any summary containing a number that isn't in the data is discarded.</p>
+    </div>
+    {% endif %}
+
+    {% if results %}
+      {% for item in results %}
+        {% set r = item.r %}
+        <div class="match">
+          <div class="m-left">
+            <p class="m-num serif">{{ '%02d'|format(loop.index) }}</p>
+            <p class="m-name">{{ r.program.university }}</p>
+            <p class="m-prog">{{ r.program.program }}{% if r.program.coop.value %} · Co-op{% endif %} · {{ r.program.city }}</p>
+            <p class="m-why">{{ item.why }}</p>
+            <div class="living">
+              <p class="living-cap">Living costs · not part of your tuition budget</p>
+              <p class="living-total">{{ item.living }} <span>per year</span></p>
+              <p class="living-parts">Rent {{ item.monthly.rent }} · Groceries {{ item.monthly.food }}{% if item.monthly.eating_out %} · Eating out {{ item.monthly.eating_out }}{% endif %} · Transit {{ item.monthly.transit }} · Phone &amp; internet {{ item.monthly.phone_internet }} · Other {{ item.monthly.other }}</p>
+              <p class="living-parts">{{ item.housing_line }}</p>
+              <p class="living-parts"><b>Tuition + living: {{ item.total }} a year</b></p>
+            </div>
+            {% for c in item.caveats %}<p class="m-flag">! {{ c }}</p>{% endfor %}
+            <span class="tag {{ r.label }}">{{ {'safety': 'likely admit', 'match': 'match', 'reach': 'reach'}[r.label] }}</span><span class="tag">{{ r.confidence }}</span>
+          </div>
+          <div class="m-right">
+            <p class="m-cap">Index score</p>
+            <p class="m-score serif">{{ '%.0f'|format(r.score * 100) }}%</p>
+            <p class="m-cost"><b>{{ item.tuition }}</b> tuition/yr{% if not item.tuition_confirmed %}<br><span style="color:#7a3c06">unconfirmed</span>{% endif %}</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% elif no_match %}
+      <div class="nomatch">
+        <h3 class="serif">No universities available for the selected tuition fee budget</h3>
+        <p>None of the {{ degree.name }} programs on file charge {{ no_match.budget }} or less a year in {{ no_match.status }} tuition.</p>
+        {% if no_match.cheapest %}<p>The lowest tuition for this degree is <b>{{ no_match.cheapest }}</b> a year. Raise your tuition budget to at least that, or try another degree.</p>{% endif %}
+      </div>
+    {% else %}
+      <p class="empty serif">Fill in the panel and rank your options. Each result carries its index score, the estimated all-in cost as a range, and the reason it placed where it did.</p>
+    {% endif %}
+
+    <div class="methodology">
+      <span class="meth-tab">Methodology</span>
+      <div class="meth-box">
+        <p class="serif">"Scores weigh admission fit, all-in cost, and the preferences you set. Costs are ranges, not single figures, and every figure carries its source and a check-by date.{% if weights.source != 'learned' %} Ranking weights are currently hand-set rather than fitted to data.{% endif %}"</p>
+        <p class="meth-by">— North Path, 2026 Index · <a href="/methodology">full method</a></p>
+      </div>
+    </div>
+
+    <div class="figure">
+      <svg viewBox="0 0 260 200" width="100%" height="200" role="img"
+           aria-label="Illustration: a graduate in profile overlaid with a network of data nodes">
+        <defs>
+          <linearGradient id="np-head" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2f6f57"/>
+            <stop offset="100%" stop-color="#17493a"/>
+          </linearGradient>
+          <linearGradient id="np-fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c9a227" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+          </linearGradient>
+          <clipPath id="np-clip">
+            <path d="M168 62 C138 52 110 68 106 92 L98 112 L86 126 L100 133 L97 145
+                     L106 152 L99 163 C104 176 118 185 133 185 L136 200 L172 200
+                     L170 150 C186 138 190 86 168 62 Z"/>
+          </clipPath>
+        </defs>
+
+        <!-- data columns in the background -->
+        <g opacity=".5">
+          {% for x in [18, 32, 46, 210, 226, 240] %}
+          <rect x="{{ x }}" y="70" width="5" height="116" fill="url(#np-fade)"/>
+          {% endfor %}
+        </g>
+        <g fill="rgba(245,239,220,.35)" font-size="7" font-family="monospace">
+          <text x="14" y="196">1011001</text>
+          <text x="196" y="196">0110101</text>
+        </g>
+
+        <!-- head and shoulders in profile -->
+        <path d="M168 62 C138 52 110 68 106 92 L98 112 L86 126 L100 133 L97 145
+                 L106 152 L99 163 C104 176 118 185 133 185 L136 200 L172 200
+                 L170 150 C186 138 190 86 168 62 Z" fill="url(#np-head)"/>
+
+        <!-- node network, clipped to the silhouette -->
+        <g clip-path="url(#np-clip)" stroke="#c9a227" stroke-width=".8" fill="none" opacity=".9">
+          <path d="M112 96 L136 84 L160 96 L160 124 L136 136 L112 124 Z"/>
+          <path d="M136 84 L136 136 M112 96 L160 124 M160 96 L112 124"/>
+          <path d="M136 136 L128 166 L158 172 M160 124 L178 140"/>
+          <path d="M112 96 L104 74 L134 66"/>
+        </g>
+        <g clip-path="url(#np-clip)" fill="#f0d79a">
+          {% for node in [[136,84],[112,96],[160,96],[112,124],[160,124],[136,136],[128,166],[158,172],[104,74],[178,140]] %}
+          <circle cx="{{ node[0] }}" cy="{{ node[1] }}" r="2.4"/>
+          {% endfor %}
+        </g>
+
+        <!-- mortarboard -->
+        <path d="M96 58 L164 34 L214 50 L146 74 Z" fill="#0d2118"/>
+        <path d="M146 74 L146 84 L160 79 L160 66 Z" fill="#0d2118"/>
+        <circle cx="164" cy="34" r="3" fill="#c9a227"/>
+        <path d="M164 34 L206 44 L206 74" stroke="#c9a227" stroke-width="1.6" fill="none"/>
+        <circle cx="206" cy="78" r="4" fill="#c9a227"/>
+      </svg>
+      <p class="fig-cap">Fig. 01 — Scored, not guessed</p>
+    </div>
+  </section>
+</div>
+</body>
+</html>
