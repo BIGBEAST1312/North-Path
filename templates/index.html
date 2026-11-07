@@ -4,418 +4,774 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>North Path — Program Index</title>
+<meta name="description" content="Ranks Canadian universities by how strong they are in your degree, whether you'd get in, and what a year actually costs — with a source on every figure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#12281e;        /* page background */
-    --panel:#e3b23c;       /* results panel */
-    --cream:#f5efdc;       /* form panel */
-    --ink:#12281e;
-    --muted:#5f6b5f;
-    --gold:#c9a227;
-    --rule:#d9d0b4;
-    --warn:#8a4b12;
+    --bg:#06060b;
+    --bg-2:#0a0a13;
+    --card:rgba(255,255,255,.035);
+    --card-2:rgba(255,255,255,.055);
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.16);
+    --text:#edebf7;
+    --muted:#9793b4;
+    --dim:#6f6b8c;
+    --violet:#7b6cf6;
+    --violet-lift:#a79bff;
+    --violet-deep:#2a2160;
+    --amber:#e8b06a;
+    --green:#5fcf9e;
+    --radius:14px;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   body{
-    margin:0;background:var(--deep);color:var(--ink);
-    font:15px/1.6 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    margin:0;background:var(--bg);color:var(--text);
+    font:15px/1.65 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
-  .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif}
-  .shell{max-width:1180px;margin:0 auto;padding:26px 18px 60px;display:grid;grid-template-columns:1fr 1fr;gap:0}
-  @media(max-width:880px){.shell{grid-template-columns:1fr;padding:0 0 40px}}
+  em,.it{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400}
+  a{color:var(--violet-lift)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  @media(max-width:620px){.wrap{padding:0 18px}}
 
-  /* ---------- left: the form ---------- */
-  .form-panel{background:var(--cream);padding:38px 40px 44px;border-top:5px solid var(--gold)}
-  @media(max-width:880px){.form-panel{padding:28px 20px 34px}}
-  .brand{display:flex;align-items:center;gap:14px;margin:0 0 6px}
-  .mark{width:44px;height:44px;flex:none;background:var(--deep);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;font-size:20px;
-    border:1px solid var(--gold);outline:3px solid var(--cream);outline-offset:-6px}
-  h1{font-size:25px;letter-spacing:.14em;margin:0;font-weight:600;text-transform:uppercase}
-  .kicker{font-style:italic;color:var(--muted);font-size:14px;margin:2px 0 0}
-  .lede{font-style:italic;font-size:17px;line-height:1.5;margin:22px 0 24px;color:#2b3b30;max-width:44ch}
-  .rule{height:1px;background:var(--rule);margin:0 0 22px}
+  /* ---------------- nav ---------------- */
+  .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+    background:rgba(6,6,11,.72);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px}
+  @media(max-width:620px){.nav-in{padding:12px 18px;gap:16px}}
+  .logo{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;font-weight:600;color:var(--text);text-decoration:none;flex:none}
+  .logo-mark{width:26px;height:26px;border:1px solid var(--violet);border-radius:7px;
+    display:grid;place-items:center;font-size:12px;color:var(--violet-lift);
+    background:linear-gradient(145deg,rgba(123,108,246,.3),transparent)}
+  .nav-links{display:flex;gap:24px;margin-left:auto;font-size:13px}
+  .nav-links a{color:var(--muted);text-decoration:none}
+  .nav-links a:hover{color:var(--text)}
+  @media(max-width:760px){.nav-links{display:none}}
+  .nav-cta{flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:9px;
+    padding:8px 8px 8px 16px;border-radius:99px;border:1px solid var(--line-2);
+    background:var(--card-2);color:var(--text);text-decoration:none;font-size:13px;font-weight:500}
+  @media(max-width:760px){.nav-cta{margin-left:auto}}
+  .nav-links + .nav-cta{margin-left:24px}
+  .nav-cta:hover{border-color:var(--violet)}
+  .nav-cta i{width:22px;height:22px;border-radius:99px;background:#fff;color:#06060b;
+    display:grid;place-items:center;font-style:normal;font-size:11px}
 
-  .notice{background:#e8e2cc;border-left:3px solid var(--gold);padding:14px 16px;margin:0 0 30px;font-size:13.5px;line-height:1.55}
-  .notice b{letter-spacing:.02em}
-  .notice em{font-style:italic;color:#4a4736}
-  .notice .bang{color:var(--warn);font-weight:700;margin-right:6px}
-  .notice a{color:var(--ink)}
+  /* ---------------- hero ---------------- */
+  .hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:center;
+    overflow:hidden;border-bottom:1px solid var(--line)}
+  #field{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero-glow{position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(55% 55% at 68% 45%,rgba(123,108,246,.2),transparent 70%),
+      linear-gradient(90deg,rgba(6,6,11,.94) 0%,rgba(6,6,11,.78) 34%,rgba(6,6,11,.1) 60%,transparent 75%),
+      radial-gradient(90% 55% at 50% 112%,rgba(6,6,11,.96),transparent 62%)}
+  @media(max-width:860px){
+    .hero-glow{background:
+      radial-gradient(60% 40% at 50% 28%,rgba(123,108,246,.2),transparent 70%),
+      linear-gradient(180deg,rgba(6,6,11,.45) 0%,rgba(6,6,11,.88) 46%,rgba(6,6,11,.97) 100%)}}
+  .hero-in{position:relative;z-index:2;width:100%;padding:90px 0 60px}
+  .ghost{position:absolute;z-index:1;top:34%;left:50%;transform:translate(-50%,-50%);
+    font-size:clamp(70px,16vw,220px);font-weight:700;letter-spacing:.02em;white-space:nowrap;
+    color:rgba(255,255,255,.028);pointer-events:none;user-select:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);border:1px solid var(--line);
+    background:rgba(255,255,255,.03);padding:6px 13px;border-radius:99px;margin:0 0 26px}
+  .dot{width:6px;height:6px;border-radius:99px;background:var(--violet-lift);
+    box-shadow:0 0 10px var(--violet)}
+  h1{font-size:clamp(34px,5.4vw,64px);line-height:1.08;margin:0 0 22px;font-weight:600;
+    letter-spacing:-.025em;max-width:16ch}
+  h1 em{color:var(--violet-lift);font-size:1.06em}
+  .hero-sub{font-size:16.5px;color:var(--muted);max-width:50ch;margin:0 0 34px;line-height:1.7}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 54px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:99px;
+    font-size:14px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer;
+    font-family:inherit}
+  .btn-primary{background:var(--violet);color:#fff;box-shadow:0 10px 36px -12px var(--violet)}
+  .btn-primary:hover{background:#6d5cf0}
+  .btn-ghost{border-color:var(--line-2);color:var(--text);background:rgba(255,255,255,.03)}
+  .btn-ghost:hover{border-color:var(--violet)}
+  .stats{display:flex;flex-wrap:wrap;gap:46px}
+  @media(max-width:620px){.stats{gap:26px}}
+  .stat b{display:block;font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+  .stat span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 
-  .ask{background:#e8e2cc;padding:14px 16px;margin:0 0 26px;border-left:3px solid var(--deep)}
-  .ask input{margin-top:2px}
-  .ask-note{font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.5}
-  .ask-read{font-size:12px;color:var(--ink);margin:8px 0 0;font-style:italic}
+  /* ---------------- shared section bits ---------------- */
+  .sec{padding:84px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:620px){.sec{padding:56px 0}}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin:0 0 40px}
+  @media(max-width:760px){.sec-head{flex-direction:column;align-items:flex-start;gap:14px}}
+  h2{font-size:clamp(24px,3.2vw,34px);margin:0;font-weight:600;letter-spacing:-.02em}
+  h2 em{color:var(--violet-lift)}
+  .sec-note{font-size:13.5px;color:var(--muted);max-width:46ch;margin:0}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ---------------- disclosure banner ---------------- */
+  .disclosure{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:var(--radius);
+    border:1px solid rgba(232,176,106,.3);background:linear-gradient(180deg,rgba(232,176,106,.1),rgba(232,176,106,.03));
+    font-size:13.5px;line-height:1.6;color:#e7dcc8;margin:0 0 30px}
+  .disclosure .bang{color:var(--amber);font-weight:700;flex:none}
+  .disclosure a{color:var(--amber)}
+  .disclosure b{color:#fff}
+
+  /* ---------------- the tool ---------------- */
+  .tool-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:22px;align-items:start}
+  @media(max-width:980px){.tool-grid{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px}
+  @media(max-width:620px){.panel{padding:22px 18px}}
+  .panel-violet{background:
+      radial-gradient(120% 80% at 0% 0%,rgba(123,108,246,.16),transparent 60%),var(--card)}
+  .ask{background:rgba(123,108,246,.08);border:1px solid rgba(123,108,246,.26);
+    border-radius:var(--radius);padding:15px 16px;margin:0 0 26px}
+  .ask-note{font-size:11.5px;color:var(--dim);margin:9px 0 0;line-height:1.55}
+  .ask-read{font-size:12.5px;color:var(--violet-lift);margin:9px 0 0}
   .section{margin:0 0 26px}
-  .section-head{display:flex;align-items:center;gap:10px;margin:0 0 16px;
-    border-left:3px solid var(--gold);padding-left:12px}
-  .section-num{color:var(--gold);font-weight:700;font-size:15px;letter-spacing:.06em}
-  .section-title{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-  .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .section-head{display:flex;align-items:center;gap:11px;margin:0 0 16px}
+  .section-num{color:var(--violet-lift);font-size:12px;font-weight:600;letter-spacing:.08em}
+  .section-title{font-size:12px;letter-spacing:.17em;text-transform:uppercase;font-weight:600;color:var(--text)}
+  .section-head:after{content:"";flex:1;height:1px;background:var(--line)}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media(max-width:560px){.pair{grid-template-columns:1fr}}
-  label{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;font-weight:600}
+  label{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--dim);margin:0 0 7px;font-weight:500}
   input[type=number],input[type=text],select{
-    width:100%;padding:11px 12px;border:1px solid var(--rule);background:#fbf7e9;
-    color:var(--ink);font-size:15px;border-radius:2px;font-family:inherit}
-  input:focus,select:focus{outline:2px solid var(--gold);outline-offset:-1px}
+    width:100%;padding:12px 13px;border:1px solid var(--line-2);border-radius:10px;
+    background:rgba(255,255,255,.04);color:var(--text);font-size:15px;font-family:inherit;
+    appearance:none}
+  select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),
+      linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+    background-position:calc(100% - 18px) 51%,calc(100% - 13px) 51%;
+    background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px}
+  select option,select optgroup{background:#12121d;color:var(--text)}
+  input::placeholder{color:#5b5878}
+  input:focus,select:focus{outline:none;border-color:var(--violet);
+    box-shadow:0 0 0 3px rgba(123,108,246,.22)}
   .check{display:flex;align-items:center;gap:12px;margin:0 0 12px;cursor:pointer}
   .check input{position:absolute;opacity:0;width:0;height:0}
-  .box{width:24px;height:24px;flex:none;border:1px solid var(--rule);background:#fbf7e9;
-    display:flex;align-items:center;justify-content:center;color:transparent;font-size:15px;font-weight:700}
-  .check input:checked + .box{background:var(--gold);border-color:var(--gold);color:var(--deep)}
-  .check input:focus-visible + .box{outline:2px solid var(--deep);outline-offset:2px}
-  .check-label{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
-  .footnote{font-size:12px;color:var(--muted);margin:4px 0 26px;line-height:1.5}
-  button{width:100%;padding:16px;border:0;background:var(--deep);color:var(--cream);
-    font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;cursor:pointer;
-    border-bottom:4px solid var(--gold);font-family:inherit}
-  button:hover{background:#0c1d15}
-  .err{color:#9a2a2a;font-size:13.5px;margin:0 0 14px}
+  .box{width:22px;height:22px;flex:none;border:1px solid var(--line-2);border-radius:6px;
+    background:rgba(255,255,255,.04);display:grid;place-items:center;color:transparent;font-size:12px}
+  .check input:checked + .box{background:var(--violet);border-color:var(--violet);color:#fff}
+  .check input:focus-visible + .box{box-shadow:0 0 0 3px rgba(123,108,246,.35)}
+  .check-label{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+  .footnote{font-size:12px;color:var(--dim);margin:4px 0 22px;line-height:1.6}
+  .hr{height:1px;background:var(--line);margin:0 0 22px}
+  button.submit{width:100%;padding:15px;border:0;border-radius:99px;background:var(--violet);
+    color:#fff;font-size:14px;letter-spacing:.04em;font-weight:600;cursor:pointer;font-family:inherit;
+    box-shadow:0 12px 36px -14px var(--violet)}
+  button.submit:hover{background:#6d5cf0}
+  .err{color:#ff8e8e;font-size:13.5px;margin:0 0 14px}
 
-  /* ---------- right: results ---------- */
-  .results{background:var(--panel);color:var(--deep);padding:38px 34px 44px}
-  @media(max-width:880px){.results{padding:30px 20px 36px}}
-  .results h2{font-size:27px;margin:0 0 26px;font-weight:600}
-  .match{display:flex;justify-content:space-between;gap:16px;padding:0 0 18px;margin:0 0 18px;
-    border-bottom:1px solid rgba(18,40,30,.22)}
-  .match:last-of-type{border-bottom:0}
-  .m-left{min-width:0}
-  .m-num{font-size:29px;color:#7d5a06;font-weight:700;line-height:1;margin:0 0 8px}
-  .m-name{font-size:16px;font-weight:700;margin:0 0 3px}
-  .m-prog{font-size:13px;color:rgba(18,40,30,.75);margin:0}
+  /* ---------------- results ---------------- */
+  .res-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 6px}
+  .res-head h2{font-size:24px}
+  .res-degree{font-size:13px;color:var(--muted);margin:0 0 24px}
+  .match{padding:22px 0;border-top:1px solid var(--line);display:flex;gap:18px;justify-content:space-between}
+  .match:first-of-type{border-top:0}
+  .m-left{min-width:0;flex:1}
+  .m-num{font-size:12px;font-weight:600;color:var(--violet-lift);letter-spacing:.1em;margin:0 0 7px}
+  .m-name{font-size:17px;font-weight:600;margin:0 0 3px;letter-spacing:-.01em}
+  .m-prog{font-size:12.5px;color:var(--dim);margin:0}
   .m-right{text-align:right;flex:none}
-  .m-cap{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 2px}
-  .m-score{font-size:24px;font-weight:700;margin:0;line-height:1.1}
-  .m-cost{font-size:12px;color:rgba(18,40,30,.78);margin:3px 0 0}
-  .m-why{font-size:12.5px;color:rgba(18,40,30,.82);margin:10px 0 0;line-height:1.5}
-  .m-flag{font-size:12px;color:#7a3c06;margin:6px 0 0;line-height:1.5}
-  .tag{display:inline-block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
-    padding:2px 7px;border:1px solid rgba(18,40,30,.4);margin:8px 6px 0 0}
+  .m-cap{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 3px}
+  .m-score{font-size:28px;font-weight:600;margin:0;line-height:1;color:var(--violet-lift);letter-spacing:-.02em}
+  .m-cost{font-size:12px;color:var(--muted);margin:6px 0 0}
+  .m-why{font-size:13px;color:var(--muted);margin:12px 0 0;line-height:1.65}
+  .m-flag{font-size:12px;color:var(--amber);margin:7px 0 0;line-height:1.55}
+  .tag{display:inline-block;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+    padding:3px 9px;border-radius:99px;border:1px solid var(--line-2);color:var(--muted);margin:12px 7px 0 0}
+  .tag.safety{color:var(--green);border-color:rgba(95,207,158,.4);background:rgba(95,207,158,.08)}
+  .tag.match{color:var(--violet-lift);border-color:rgba(123,108,246,.45);background:rgba(123,108,246,.1)}
+  .tag.reach{color:var(--amber);border-color:rgba(232,176,106,.4);background:rgba(232,176,106,.08)}
+  .living{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:12px;
+    padding:13px 15px;margin:14px 0 0}
+  .living-cap{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);margin:0 0 5px;font-weight:600}
+  .living-total{font-size:18px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+  .living-total span{font-size:12px;font-weight:400;color:var(--dim);letter-spacing:0}
+  .living-parts{font-size:12px;color:var(--muted);margin:4px 0 0;line-height:1.6}
+  .living-parts b{color:var(--text)}
+  .unconf{color:var(--amber)}
 
-  .methodology{position:relative;margin:34px 0 0}
-  .meth-tab{display:inline-block;background:var(--deep);color:var(--gold);font-size:10px;
-    letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:4px 10px;position:relative;top:1px}
-  .meth-box{border:1px solid var(--gold);background:var(--deep);color:var(--cream);padding:20px}
-  .meth-box p{font-style:italic;font-size:15px;line-height:1.55;margin:0}
-  .meth-by{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:14px 0 0}
-  .meth-box a{color:var(--gold)}
+  .summary{border:1px solid rgba(123,108,246,.3);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(123,108,246,.12),rgba(123,108,246,.03));
+    padding:16px 18px;margin:0 0 22px}
+  .summary-cap{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--violet-lift);
+    margin:0 0 8px;font-weight:600}
+  .summary p{font-size:14px;line-height:1.7;margin:0;color:#dedbf0}
+  .summary-note{font-size:11.5px;color:var(--dim);margin:10px 0 0 !important;line-height:1.55}
+  .career{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.028);
+    padding:15px 17px;margin:0 0 22px}
+  .career-cap{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin:0 0 10px;font-weight:600}
+  .career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:520px){.career-grid{grid-template-columns:1fr}}
+  .career-grid b{display:block;font-size:16px;font-weight:600;letter-spacing:-.01em}
+  .career-grid span{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+  .career-src{font-size:11.5px;color:var(--dim);margin:12px 0 0;line-height:1.55}
+  .career-src a{color:var(--muted)}
+  .pathway{border:1px solid rgba(232,176,106,.3);border-radius:var(--radius);
+    background:rgba(232,176,106,.07);padding:15px 17px;margin:0 0 22px;font-size:13px;line-height:1.65;color:#e7dcc8}
+  .pathway b{color:var(--amber);display:block;font-size:10px;letter-spacing:.15em;
+    text-transform:uppercase;margin:0 0 7px}
+  .nomatch{border:1px solid rgba(255,142,142,.3);background:rgba(255,142,142,.07);
+    border-radius:var(--radius);padding:18px 20px;margin:0 0 22px}
+  .nomatch h3{font-size:17px;margin:0 0 9px;color:#ffb3b3;font-weight:600}
+  .nomatch p{font-size:13.5px;margin:0 0 6px;line-height:1.65;color:var(--muted)}
+  .empty{font-size:14.5px;color:var(--muted);line-height:1.75;margin:0}
+  .empty em{color:var(--violet-lift)}
 
-  .figure{margin:26px 0 0;background:var(--deep);border:1px solid rgba(18,40,30,.35);padding:18px 18px 14px;text-align:center}
-  .fig-cap{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,239,220,.72);margin:12px 0 0}
-  .summary{background:rgba(18,40,30,.09);border-left:3px solid var(--deep);padding:14px 16px;margin:0 0 22px}
-  .summary-cap{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 6px;font-weight:700}
-  .summary p{font-size:14px;line-height:1.55;margin:0}
-  .summary-note{font-size:11px;color:rgba(18,40,30,.7);margin:8px 0 0 !important;line-height:1.5}
-  .living{background:rgba(18,40,30,.07);padding:10px 12px;margin:12px 0 0}
-  .living-cap{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 3px;font-weight:700}
-  .living-total{font-size:16px;font-weight:700;margin:0 0 4px}
-  .living-total span{font-size:12px;font-weight:400;color:rgba(18,40,30,.7)}
-  .living-parts{font-size:12px;color:rgba(18,40,30,.8);margin:3px 0 0;line-height:1.5}
-  .nomatch{background:var(--deep);color:var(--cream);padding:18px 20px;margin:0 0 22px}
-  .nomatch h3{font-size:18px;margin:0 0 8px;color:var(--gold)}
-  .nomatch p{font-size:14px;margin:0 0 6px;line-height:1.55}
-  .career{background:rgba(18,40,30,.08);border-left:3px solid var(--deep);padding:12px 14px;margin:0 0 22px}
-  .career-cap{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(18,40,30,.7);margin:0 0 4px;font-weight:700}
-  .career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0 0}
-  @media(max-width:480px){.career-grid{grid-template-columns:1fr}}
-  .career-grid b{display:block;font-size:15px}
-  .career-grid span{font-size:11px;color:rgba(18,40,30,.7)}
-  .career-src{font-size:11px;color:rgba(18,40,30,.7);margin:8px 0 0}
-  .career-src a{color:inherit}
-  .pathway{background:var(--deep);color:var(--cream);padding:14px 16px;margin:0 0 22px;font-size:13.5px;line-height:1.55}
-  .pathway b{color:var(--gold);display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px}
-  .empty{font-style:italic;font-size:15px;color:rgba(18,40,30,.82);line-height:1.6;margin:0 0 8px}
+  /* ---------------- how it works ---------------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.cards{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;
+    background:var(--card);position:relative;overflow:hidden}
+  .card:first-child{background:
+      radial-gradient(130% 100% at 0% 0%,rgba(123,108,246,.22),transparent 62%),var(--card);
+    border-color:rgba(123,108,246,.3)}
+  .card-n{font-size:11px;letter-spacing:.14em;color:var(--dim);margin:0 0 18px}
+  .card h3{font-size:17px;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+  .card p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.7}
+  .card .pct{font-size:34px;font-weight:600;color:var(--violet-lift);letter-spacing:-.02em;margin:0 0 6px}
+
+  .meth{display:grid;grid-template-columns:1.4fr 1fr;gap:22px;align-items:stretch}
+  @media(max-width:860px){.meth{grid-template-columns:1fr}}
+  .quote{border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:var(--card)}
+  .quote p{font-size:19px;line-height:1.6;margin:0 0 18px;color:#dedbf0}
+  .quote .by{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin:0}
+  .quote .by a{color:var(--violet-lift)}
+  .figure{border:1px solid var(--line);border-radius:var(--radius);background:
+      radial-gradient(90% 70% at 50% 20%,rgba(123,108,246,.14),transparent 70%),var(--card);
+    padding:22px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+  .fig-cap{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--dim);margin:14px 0 0}
+
+  footer{padding:46px 0 60px;color:var(--dim);font-size:12.5px}
+  .foot-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--text)}
 </style>
 </head>
 <body>
-<div class="shell">
 
-  <!-- ============ FORM ============ -->
-  <section class="form-panel">
-    <div class="brand">
-      <div class="mark serif">N</div>
-      <div>
-        <h1 class="serif">North Path</h1>
-        <p class="kicker serif">Program Index</p>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/"><span class="logo-mark">N</span>North Path</a>
+    <div class="nav-links">
+      <a href="#tool">The tool</a>
+      <a href="#how">How it scores</a>
+      <a href="/methodology">Methodology</a>
+    </div>
+    <a class="nav-cta" href="#tool">Rank my options <i>&#8599;</i></a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="hero-glow"></div>
+  <div class="ghost" aria-hidden="true">NORTH PATH</div>
+  <div class="hero-in">
+    <div class="wrap">
+      <span class="eyebrow"><span class="dot"></span>{{ stats.universities }} universities · {{ stats.degrees }} degrees</span>
+      <h1>Pick a degree. <em>Get the shortlist</em> that fits you.</h1>
+      <p class="hero-sub">North Path ranks Canadian universities by how strong they are in your degree,
+        whether you'd get in, what a year actually costs — and it shows you where every
+        number came from.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#tool">Rank my options</a>
+        <a class="btn btn-ghost" href="/methodology">How the score works</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>{{ stats.universities }}</b><span>universities</span></div>
+        <div class="stat"><b>{{ stats.degrees }}</b><span>degrees</span></div>
+        <div class="stat"><b>{{ stats.cities }}</b><span>cities costed</span></div>
+        <div class="stat"><b>{{ stats.sourced_pct }}%</b><span>figures verified</span></div>
       </div>
     </div>
+  </div>
+</header>
 
-    <p class="lede serif">Pick a degree. North Path ranks Canadian universities by how strong they are in it, whether you'd get in, what a year really costs, and the things you said matter.</p>
-    <div class="rule"></div>
+<!-- ============ THE TOOL ============ -->
+<section class="sec" id="tool">
+  <div class="wrap">
 
     {% if health.unverified %}
-    <div class="notice">
-      <span class="bang">!</span><b>Early data release.</b>
-      <em>All {{ health.unverified }} figures are unverified placeholders and the cost ranges have never been
-      checked against what real students pay. Demonstration of a method, not financial advice.</em>
-      <a href="/methodology">Read the methodology.</a>
+    <div class="disclosure reveal">
+      <span class="bang">!</span>
+      <div><b>Early data release.</b>
+        All {{ health.unverified }} figures are unverified placeholders and the cost ranges have never been
+        checked against what real students pay. Demonstration of a method, not financial advice.
+        <a href="/methodology">Read the methodology.</a></div>
     </div>
     {% elif not health.calibrated %}
-    <div class="notice">
-      <span class="bang">!</span><b>Sourced but untested.</b>
-      <em>Every figure has a source, but the ranges have not been compared against real spending.</em>
-      <a href="/methodology">Read the methodology.</a>
+    <div class="disclosure reveal">
+      <span class="bang">!</span>
+      <div><b>Sourced but untested.</b>
+        Every figure has a source, but the ranges have not been compared against real spending.
+        <a href="/methodology">Read the methodology.</a></div>
     </div>
     {% else %}
-    <div class="notice">
-      <b>Calibrated.</b>
-      <em>Ranges cover {{ '%.0f'|format(health.coverage * 100) }}% of what {{ health.n_reports }} students reported spending.</em>
-      <a href="/methodology">Read the methodology.</a>
+    <div class="disclosure reveal">
+      <span class="bang">✓</span>
+      <div><b>Calibrated.</b>
+        Ranges cover {{ '%.0f'|format(health.coverage * 100) }}% of what {{ health.n_reports }} students reported spending.
+        <a href="/methodology">Read the methodology.</a></div>
     </div>
     {% endif %}
 
-    <form method="post">
-      {% if error %}<p class="err">{{ error }}</p>{% endif %}
+    <div class="tool-grid">
 
-      {% if ai_enabled %}
-      <div class="ask">
-        <label for="query">Or describe your situation in a sentence</label>
-        <input id="query" name="query" type="text" value="{{ form.query }}"
-               placeholder="e.g. 78% average, about $30k a year for tuition, computer science with co-op, smaller city">
-        <p class="ask-note">This only fills in the fields below — every figure in the results comes from the data files, never from the assistant.</p>
-        {% if ai_note %}<p class="ask-read">{{ ai_note }}</p>{% endif %}
-      </div>
-      {% endif %}
+      <!-- ---------- form ---------- -->
+      <div class="panel panel-violet reveal">
+        <form method="post">
+          {% if error %}<p class="err">{{ error }}</p>{% endif %}
 
-      <div class="section">
-        <div class="section-head">
-          <span class="section-num">01</span><span class="section-title">Academic profile</span>
-        </div>
-        <div class="pair">
-          <div>
-            <label for="average">Admission average (%)</label>
-            <input id="average" name="average" type="number" step="0.1" min="0" max="100" value="{{ form.average }}" required>
+          {% if ai_enabled %}
+          <div class="ask">
+            <label for="query">Or describe your situation in a sentence</label>
+            <input id="query" name="query" type="text" value="{{ form.query }}"
+                   placeholder="e.g. 78% average, about $30k a year for tuition, computer science with co-op, smaller city">
+            <p class="ask-note">This only fills in the fields below — every figure in the results comes from the data files, never from the assistant.</p>
+            {% if ai_note %}<p class="ask-read">{{ ai_note }}</p>{% endif %}
           </div>
-          <div>
-            <label for="degree">Degree you want to study</label>
-            <select id="degree" name="degree">
-              {% for group, items in degree_groups.items() %}
-              <optgroup label="{{ group }}">
-                {% for d in items %}
-                <option value="{{ d.id }}" {% if form.degree == d.id %}selected{% endif %}>{{ d.name }}</option>
-                {% endfor %}
-              </optgroup>
-              {% endfor %}
-            </select>
-          </div>
-        </div>
-      </div>
+          {% endif %}
 
-      <div class="section">
-        <div class="section-head">
-          <span class="section-num">02</span><span class="section-title">Financial allocation</span>
-        </div>
-        <p class="footnote" style="margin:-6px 0 14px">Tuition only. Universities over this amount are left out. Rent, food and other living costs are worked out for you and shown with each result.</p>
-        <div class="pair">
-          <div>
-            <label for="budget">Tuition budget per year (CAD)</label>
-            <input id="budget" name="budget" type="number" step="500" min="1" value="{{ form.budget }}" required>
-          </div>
-          <div>
-            <label for="status">Fee status</label>
-            <select id="status" name="status">
-              <option value="international" {% if form.status=='international' %}selected{% endif %}>International</option>
-              <option value="domestic" {% if form.status=='domestic' %}selected{% endif %}>Domestic</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-head">
-          <span class="section-num">03</span><span class="section-title">Environment &amp; logistics</span>
-        </div>
-        <div class="pair">
-          <div>
-            <label for="housing_type">Where you'll live</label>
-            <select id="housing_type" name="housing_type">
-              <option value="shared_room" {% if form.housing_type=='shared_room' %}selected{% endif %}>Shared room (sharing a bedroom)</option>
-              <option value="private_room" {% if form.housing_type=='private_room' %}selected{% endif %}>Own room in a shared place</option>
-              <option value="studio" {% if form.housing_type=='studio' %}selected{% endif %}>Own studio or one-bedroom</option>
-            </select>
-          </div>
-          <div>
-            <label for="proximity">Distance from campus</label>
-            <select id="proximity" name="proximity">
-              <option value="near" {% if form.proximity=='near' %}selected{% endif %}>Near campus (walk or short bus)</option>
-              <option value="far" {% if form.proximity=='far' %}selected{% endif %}>Further out (more transit)</option>
-            </select>
-          </div>
-          <div>
-            <label for="months">Months you'll pay rent</label>
-            <input id="months" name="months" type="number" min="1" max="12" value="{{ form.months }}">
-          </div>
-          <div>
-            <label for="meals_out">Meals out per week</label>
-            <input id="meals_out" name="meals_out" type="number" min="0" max="21" step="1" value="{{ form.meals_out }}">
-          </div>
-          <div>
-            <label for="city_size">City size preference</label>
-            <select id="city_size" name="city_size">
-              <option value="" {% if not form.city_size %}selected{% endif %}>No preference</option>
-              <option value="small" {% if form.city_size=='small' %}selected{% endif %}>Smaller city</option>
-              <option value="medium" {% if form.city_size=='medium' %}selected{% endif %}>Mid-sized</option>
-              <option value="large" {% if form.city_size=='large' %}selected{% endif %}>Large city</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule"></div>
-
-      <p class="footnote" style="margin:-14px 0 20px">Rent is a city-wide average, so distance changes your transit cost but not your rent here.</p>
-
-      <label class="check" for="coop">
-        <input id="coop" name="coop" type="checkbox" {% if form.coop %}checked{% endif %}>
-        <span class="box">&#10003;</span>
-        <span class="check-label">Co-op is a must</span>
-      </label>
-      <label class="check" for="crime_matters">
-        <input id="crime_matters" name="crime_matters" type="checkbox" {% if form.crime_matters %}checked{% endif %}>
-        <span class="box">&#10003;</span>
-        <span class="check-label">Crime rate matters to me</span>
-      </label>
-      <p class="footnote">Crime uses the city-wide Crime Severity Index and may not represent a specific neighbourhood. Left unticked, it plays no part in the ranking.</p>
-
-      <button type="submit">Rank my options</button>
-    </form>
-  </section>
-
-  <!-- ============ RESULTS ============ -->
-  <section class="results">
-    <h2 class="serif">Your matches</h2>
-    <p class="m-prog" style="margin:-18px 0 20px">{{ degree.name }}</p>
-
-    {% if degree.notice %}
-    <div class="pathway"><b>Read this first</b>{{ degree.notice }}</div>
-    {% endif %}
-
-    {% if outlook %}
-    <div class="career">
-      <p class="career-cap">Career outlook · {{ outlook.label }}</p>
-      <div class="career-grid">
-        <div><b>${{ '{:,.0f}'.format(outlook.salary_low) }}–${{ '{:,.0f}'.format(outlook.salary_high) }}</b><span>starting salary</span></div>
-        <div><b>{{ outlook.job_outlook }}</b><span>job outlook</span></div>
-        <div><b>{{ outlook.enrolment_trend }}</b><span>enrolment trend</span></div>
-      </div>
-      <p class="career-src">Same for every university below, so it doesn't change the ranking.
-        Source: <a href="{{ outlook.source_url }}">University Magazine</a>, a secondary source{% if not outlook.verified %}, not yet checked against Statistics Canada{% endif %}.</p>
-    </div>
-    {% elif degree.kind == 'degree' %}
-    <div class="career"><p class="career-cap">Career outlook</p>
-      <p class="career-src" style="margin:0">No salary or outlook data for {{ degree.name }} yet.</p></div>
-    {% endif %}
-
-    {% if summary %}
-    <div class="summary">
-      <p class="summary-cap">Assistant summary</p>
-      <p>{{ summary }}</p>
-      <p class="summary-note">Written from the results below. It cannot add figures of its own — any summary containing a number that isn't in the data is discarded.</p>
-    </div>
-    {% endif %}
-
-    {% if results %}
-      {% for item in results %}
-        {% set r = item.r %}
-        <div class="match">
-          <div class="m-left">
-            <p class="m-num serif">{{ '%02d'|format(loop.index) }}</p>
-            <p class="m-name">{{ r.program.university }}</p>
-            <p class="m-prog">{{ r.program.program }}{% if r.program.coop.value %} · Co-op{% endif %} · {{ r.program.city }}</p>
-            <p class="m-why">{{ item.why }}</p>
-            <div class="living">
-              <p class="living-cap">Living costs · not part of your tuition budget</p>
-              <p class="living-total">{{ item.living }} <span>per year</span></p>
-              <p class="living-parts">Rent {{ item.monthly.rent }} · Groceries {{ item.monthly.food }}{% if item.monthly.eating_out %} · Eating out {{ item.monthly.eating_out }}{% endif %} · Transit {{ item.monthly.transit }} · Phone &amp; internet {{ item.monthly.phone_internet }} · Other {{ item.monthly.other }}</p>
-              <p class="living-parts">{{ item.housing_line }}</p>
-              <p class="living-parts"><b>Tuition + living: {{ item.total }} a year</b></p>
+          <div class="section">
+            <div class="section-head">
+              <span class="section-num">01</span><span class="section-title">Academic profile</span>
             </div>
-            {% for c in item.caveats %}<p class="m-flag">! {{ c }}</p>{% endfor %}
-            <span class="tag {{ r.label }}">{{ {'safety': 'likely admit', 'match': 'match', 'reach': 'reach'}[r.label] }}</span><span class="tag">{{ r.confidence }}</span>
+            <div class="pair">
+              <div>
+                <label for="average">Admission average (%)</label>
+                <input id="average" name="average" type="number" step="0.1" min="0" max="100" value="{{ form.average }}" required>
+              </div>
+              <div>
+                <label for="degree">Degree you want to study</label>
+                <select id="degree" name="degree">
+                  {% for group, items in degree_groups.items() %}
+                  <optgroup label="{{ group }}">
+                    {% for d in items %}
+                    <option value="{{ d.id }}" {% if form.degree == d.id %}selected{% endif %}>{{ d.name }}</option>
+                    {% endfor %}
+                  </optgroup>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
           </div>
-          <div class="m-right">
-            <p class="m-cap">Index score</p>
-            <p class="m-score serif">{{ '%.0f'|format(r.score * 100) }}%</p>
-            <p class="m-cost"><b>{{ item.tuition }}</b> tuition/yr{% if not item.tuition_confirmed %}<br><span style="color:#7a3c06">unconfirmed</span>{% endif %}</p>
+
+          <div class="section">
+            <div class="section-head">
+              <span class="section-num">02</span><span class="section-title">Financial allocation</span>
+            </div>
+            <p class="footnote" style="margin:-6px 0 14px">Tuition only. Universities over this amount are left out. Rent, food and other living costs are worked out for you and shown with each result.</p>
+            <div class="pair">
+              <div>
+                <label for="budget">Tuition budget per year (CAD)</label>
+                <input id="budget" name="budget" type="number" step="any" min="0" value="{{ form.budget }}" required
+                       inputmode="numeric">
+              </div>
+              <div>
+                <label for="status">Fee status</label>
+                <select id="status" name="status">
+                  <option value="international" {% if form.status=='international' %}selected{% endif %}>International</option>
+                  <option value="domestic" {% if form.status=='domestic' %}selected{% endif %}>Domestic</option>
+                </select>
+              </div>
+            </div>
           </div>
+
+          <div class="section">
+            <div class="section-head">
+              <span class="section-num">03</span><span class="section-title">Environment &amp; logistics</span>
+            </div>
+            <div class="pair">
+              <div>
+                <label for="housing_type">Where you'll live</label>
+                <select id="housing_type" name="housing_type">
+                  <option value="shared_room" {% if form.housing_type=='shared_room' %}selected{% endif %}>Shared room (sharing a bedroom)</option>
+                  <option value="private_room" {% if form.housing_type=='private_room' %}selected{% endif %}>Own room in a shared place</option>
+                  <option value="studio" {% if form.housing_type=='studio' %}selected{% endif %}>Own studio or one-bedroom</option>
+                </select>
+              </div>
+              <div>
+                <label for="proximity">Distance from campus</label>
+                <select id="proximity" name="proximity">
+                  <option value="near" {% if form.proximity=='near' %}selected{% endif %}>Near campus (walk or short bus)</option>
+                  <option value="far" {% if form.proximity=='far' %}selected{% endif %}>Further out (more transit)</option>
+                </select>
+              </div>
+              <div>
+                <label for="months">Months you'll pay rent</label>
+                <input id="months" name="months" type="number" min="1" max="12" value="{{ form.months }}">
+              </div>
+              <div>
+                <label for="meals_out">Meals out per week</label>
+                <input id="meals_out" name="meals_out" type="number" min="0" max="21" step="1" value="{{ form.meals_out }}">
+              </div>
+              <div>
+                <label for="city_size">City size preference</label>
+                <select id="city_size" name="city_size">
+                  <option value="" {% if not form.city_size %}selected{% endif %}>No preference</option>
+                  <option value="small" {% if form.city_size=='small' %}selected{% endif %}>Smaller city</option>
+                  <option value="medium" {% if form.city_size=='medium' %}selected{% endif %}>Mid-sized</option>
+                  <option value="large" {% if form.city_size=='large' %}selected{% endif %}>Large city</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+          <p class="footnote" style="margin:-10px 0 18px">Rent is a city-wide average, so distance changes your transit cost but not your rent here.</p>
+
+          <label class="check" for="coop">
+            <input id="coop" name="coop" type="checkbox" {% if form.coop %}checked{% endif %}>
+            <span class="box">&#10003;</span>
+            <span class="check-label">Co-op is a must</span>
+          </label>
+          <label class="check" for="crime_matters">
+            <input id="crime_matters" name="crime_matters" type="checkbox" {% if form.crime_matters %}checked{% endif %}>
+            <span class="box">&#10003;</span>
+            <span class="check-label">Crime rate matters to me</span>
+          </label>
+          <p class="footnote">Crime uses the city-wide Crime Severity Index and may not represent a specific neighbourhood. Left unticked, it plays no part in the ranking.</p>
+
+          <button class="submit" type="submit">Rank my options</button>
+        </form>
+      </div>
+
+      <!-- ---------- results ---------- -->
+      <div class="panel reveal">
+        <div class="res-head"><h2>Your matches</h2></div>
+        <p class="res-degree">{{ degree.name }}</p>
+
+        {% if degree.notice %}
+        <div class="pathway"><b>Read this first</b>{{ degree.notice }}</div>
+        {% endif %}
+
+        {% if outlook %}
+        <div class="career">
+          <p class="career-cap">Career outlook · {{ outlook.label }}</p>
+          <div class="career-grid">
+            <div><b>${{ '{:,.0f}'.format(outlook.salary_low) }}–${{ '{:,.0f}'.format(outlook.salary_high) }}</b><span>starting salary</span></div>
+            <div><b>{{ outlook.job_outlook }}</b><span>job outlook</span></div>
+            <div><b>{{ outlook.enrolment_trend }}</b><span>enrolment trend</span></div>
+          </div>
+          <p class="career-src">Same for every university below, so it doesn't change the ranking.
+            Source: <a href="{{ outlook.source_url }}">University Magazine</a>, a secondary source{% if not outlook.verified %}, not yet checked against Statistics Canada{% endif %}.</p>
         </div>
-      {% endfor %}
-    {% elif no_match %}
-      <div class="nomatch">
-        <h3 class="serif">No universities available for the selected tuition fee budget</h3>
-        <p>None of the {{ degree.name }} programs on file charge {{ no_match.budget }} or less a year in {{ no_match.status }} tuition.</p>
-        {% if no_match.cheapest %}<p>The lowest tuition for this degree is <b>{{ no_match.cheapest }}</b> a year. Raise your tuition budget to at least that, or try another degree.</p>{% endif %}
-      </div>
-    {% else %}
-      <p class="empty serif">Fill in the panel and rank your options. Each result carries its index score, the estimated all-in cost as a range, and the reason it placed where it did.</p>
-    {% endif %}
+        {% elif degree.kind == 'degree' %}
+        <div class="career"><p class="career-cap">Career outlook</p>
+          <p class="career-src" style="margin:0">No salary or outlook data for {{ degree.name }} yet.</p></div>
+        {% endif %}
 
-    <div class="methodology">
-      <span class="meth-tab">Methodology</span>
-      <div class="meth-box">
-        <p class="serif">"Scores weigh admission fit, all-in cost, and the preferences you set. Costs are ranges, not single figures, and every figure carries its source and a check-by date.{% if weights.source != 'learned' %} Ranking weights are currently hand-set rather than fitted to data.{% endif %}"</p>
-        <p class="meth-by">— North Path, 2026 Index · <a href="/methodology">full method</a></p>
+        {% if summary %}
+        <div class="summary">
+          <p class="summary-cap">Assistant summary</p>
+          <p>{{ summary }}</p>
+          <p class="summary-note">Written from the results below. It cannot add figures of its own — any summary containing a number that isn't in the data is discarded.</p>
+        </div>
+        {% endif %}
+
+        {% if results %}
+          {% for item in results %}
+            {% set r = item.r %}
+            <div class="match">
+              <div class="m-left">
+                <p class="m-num">{{ '%02d'|format(loop.index) }}</p>
+                <p class="m-name">{{ r.program.university }}</p>
+                <p class="m-prog">{{ r.program.program }}{% if r.program.coop.value %} · Co-op{% endif %} · {{ r.program.city }}</p>
+                <p class="m-why">{{ item.why }}</p>
+                <div class="living">
+                  <p class="living-cap">Living costs · not part of your tuition budget</p>
+                  <p class="living-total">{{ item.living }} <span>per year</span></p>
+                  <p class="living-parts">Rent {{ item.monthly.rent }} · Groceries {{ item.monthly.food }}{% if item.monthly.eating_out %} · Eating out {{ item.monthly.eating_out }}{% endif %} · Transit {{ item.monthly.transit }} · Phone &amp; internet {{ item.monthly.phone_internet }} · Other {{ item.monthly.other }}</p>
+                  <p class="living-parts">{{ item.housing_line }}</p>
+                  <p class="living-parts"><b>Tuition + living: {{ item.total }} a year</b></p>
+                </div>
+                {% for c in item.caveats %}<p class="m-flag">! {{ c }}</p>{% endfor %}
+                <span class="tag {{ r.label }}">{{ {'safety': 'likely admit', 'match': 'match', 'reach': 'reach'}[r.label] }}</span><span class="tag">{{ r.confidence }}</span>
+              </div>
+              <div class="m-right">
+                <p class="m-cap">Index score</p>
+                <p class="m-score">{{ '%.0f'|format(r.score * 100) }}%</p>
+                <p class="m-cost"><b>{{ item.tuition }}</b> tuition/yr{% if not item.tuition_confirmed %}<br><span class="unconf">unconfirmed</span>{% endif %}</p>
+              </div>
+            </div>
+          {% endfor %}
+        {% elif no_match %}
+          <div class="nomatch">
+            <h3>No universities available for the selected tuition fee budget</h3>
+            <p>None of the {{ degree.name }} programs on file charge {{ no_match.budget }} or less a year in {{ no_match.status }} tuition.</p>
+            {% if no_match.cheapest %}<p>The lowest tuition for this degree is <b>{{ no_match.cheapest }}</b> a year. Raise your tuition budget to at least that, or try another degree.</p>{% endif %}
+          </div>
+        {% else %}
+          <p class="empty">Fill in the panel and rank your options. Each result carries its index score,
+            the estimated all-in cost as a range, and <em>the reason it placed where it did</em>.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT SCORES ============ -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What the <em>index score</em> is made of</h2>
+      <p class="sec-note">Four parts, weighted. Nothing is a guess dressed up as a number —
+        where a figure is missing, the card says so instead of filling the gap.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <p class="card-n">01 · WEIGHT 50%</p>
+        <p class="pct">50%</p>
+        <h3>Degree strength</h3>
+        <p>A published subject score for that university in that degree — mostly THE World University
+          Rankings 2026 by subject. A school missing from the table sits below the ranked ones rather
+          than being invented a score.</p>
+      </div>
+      <div class="card reveal">
+        <p class="card-n">02 · WEIGHT 20%</p>
+        <p class="pct">20%</p>
+        <h3>Admission fit</h3>
+        <p>Your average against the published cutoff, as a curve rather than a cliff. Results are
+          labelled likely admit, match or reach — a cutoff is a published minimum, not a prediction
+          of your odds.</p>
+      </div>
+      <div class="card reveal">
+        <p class="card-n">03 · WEIGHT 15% + 15%</p>
+        <p class="pct">30%</p>
+        <h3>Cost and preferences</h3>
+        <p>Tuition acts as a hard filter; cost fit then nudges gently inside it. Preferences — co-op,
+          city size, crime — only count when you ask for them.</p>
       </div>
     </div>
 
-    <div class="figure">
-      <svg viewBox="0 0 260 200" width="100%" height="200" role="img"
-           aria-label="Illustration: a graduate in profile overlaid with a network of data nodes">
-        <defs>
-          <linearGradient id="np-head" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#2f6f57"/>
-            <stop offset="100%" stop-color="#17493a"/>
-          </linearGradient>
-          <linearGradient id="np-fade" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#c9a227" stop-opacity=".55"/>
-            <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
-          </linearGradient>
-          <clipPath id="np-clip">
-            <path d="M168 62 C138 52 110 68 106 92 L98 112 L86 126 L100 133 L97 145
-                     L106 152 L99 163 C104 176 118 185 133 185 L136 200 L172 200
-                     L170 150 C186 138 190 86 168 62 Z"/>
-          </clipPath>
-        </defs>
+    <div class="meth" style="margin-top:22px">
+      <div class="quote reveal">
+        <p><em>“Scores weigh admission fit, all-in cost, and the preferences you set. Costs are ranges,
+          not single figures, and every figure carries its source and a check-by date.{% if weights.source != 'learned' %}
+          Ranking weights are currently hand-set rather than fitted to data.{% endif %}”</em></p>
+        <p class="by">— North Path, 2026 Index · <a href="/methodology">full method</a></p>
+      </div>
 
-        <!-- data columns in the background -->
-        <g opacity=".5">
-          {% for x in [18, 32, 46, 210, 226, 240] %}
-          <rect x="{{ x }}" y="70" width="5" height="116" fill="url(#np-fade)"/>
-          {% endfor %}
-        </g>
-        <g fill="rgba(245,239,220,.35)" font-size="7" font-family="monospace">
-          <text x="14" y="196">1011001</text>
-          <text x="196" y="196">0110101</text>
-        </g>
-
-        <!-- head and shoulders in profile -->
-        <path d="M168 62 C138 52 110 68 106 92 L98 112 L86 126 L100 133 L97 145
-                 L106 152 L99 163 C104 176 118 185 133 185 L136 200 L172 200
-                 L170 150 C186 138 190 86 168 62 Z" fill="url(#np-head)"/>
-
-        <!-- node network, clipped to the silhouette -->
-        <g clip-path="url(#np-clip)" stroke="#c9a227" stroke-width=".8" fill="none" opacity=".9">
-          <path d="M112 96 L136 84 L160 96 L160 124 L136 136 L112 124 Z"/>
-          <path d="M136 84 L136 136 M112 96 L160 124 M160 96 L112 124"/>
-          <path d="M136 136 L128 166 L158 172 M160 124 L178 140"/>
-          <path d="M112 96 L104 74 L134 66"/>
-        </g>
-        <g clip-path="url(#np-clip)" fill="#f0d79a">
-          {% for node in [[136,84],[112,96],[160,96],[112,124],[160,124],[136,136],[128,166],[158,172],[104,74],[178,140]] %}
-          <circle cx="{{ node[0] }}" cy="{{ node[1] }}" r="2.4"/>
-          {% endfor %}
-        </g>
-
-        <!-- mortarboard -->
-        <path d="M96 58 L164 34 L214 50 L146 74 Z" fill="#0d2118"/>
-        <path d="M146 74 L146 84 L160 79 L160 66 Z" fill="#0d2118"/>
-        <circle cx="164" cy="34" r="3" fill="#c9a227"/>
-        <path d="M164 34 L206 44 L206 74" stroke="#c9a227" stroke-width="1.6" fill="none"/>
-        <circle cx="206" cy="78" r="4" fill="#c9a227"/>
-      </svg>
-      <p class="fig-cap">Fig. 01 — Scored, not guessed</p>
+      <div class="figure reveal">
+        <svg viewBox="0 0 260 200" width="100%" height="190" role="img"
+             aria-label="Illustration: a graduate in profile overlaid with a network of data nodes">
+          <defs>
+            <linearGradient id="np-head" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3b2f8f"/>
+              <stop offset="100%" stop-color="#171436"/>
+            </linearGradient>
+            <linearGradient id="np-fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#a79bff" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#a79bff" stop-opacity="0"/>
+            </linearGradient>
+            <clipPath id="np-clip">
+              <path d="M168 62 C138 52 110 68 106 92 L98 112 L86 126 L100 133 L97 145
+                       L106 152 L99 163 C104 176 118 185 133 185 L136 200 L172 200
+                       L170 150 C186 138 190 86 168 62 Z"/>
+            </clipPath>
+          </defs>
+          <g opacity=".55">
+            {% for x in [18, 32, 46, 210, 226, 240] %}
+            <rect x="{{ x }}" y="70" width="5" height="116" fill="url(#np-fade)"/>
+            {% endfor %}
+          </g>
+          <g fill="rgba(167,155,255,.3)" font-size="7" font-family="monospace">
+            <text x="14" y="196">1011001</text>
+            <text x="196" y="196">0110101</text>
+          </g>
+          <path d="M168 62 C138 52 110 68 106 92 L98 112 L86 126 L100 133 L97 145
+                   L106 152 L99 163 C104 176 118 185 133 185 L136 200 L172 200
+                   L170 150 C186 138 190 86 168 62 Z" fill="url(#np-head)"/>
+          <g clip-path="url(#np-clip)" stroke="#a79bff" stroke-width=".8" fill="none" opacity=".95">
+            <path d="M112 96 L136 84 L160 96 L160 124 L136 136 L112 124 Z"/>
+            <path d="M136 84 L136 136 M112 96 L160 124 M160 96 L112 124"/>
+            <path d="M136 136 L128 166 L158 172 M160 124 L178 140"/>
+            <path d="M112 96 L104 74 L134 66"/>
+          </g>
+          <g clip-path="url(#np-clip)" fill="#d8d2ff">
+            {% for node in [[136,84],[112,96],[160,96],[112,124],[160,124],[136,136],[128,166],[158,172],[104,74],[178,140]] %}
+            <circle cx="{{ node[0] }}" cy="{{ node[1] }}" r="2.4"/>
+            {% endfor %}
+          </g>
+          <path d="M96 58 L164 34 L214 50 L146 74 Z" fill="#0b0a1c"/>
+          <path d="M146 74 L146 84 L160 79 L160 66 Z" fill="#0b0a1c"/>
+          <circle cx="164" cy="34" r="3" fill="#a79bff"/>
+          <path d="M164 34 L206 44 L206 74" stroke="#a79bff" stroke-width="1.6" fill="none"/>
+          <circle cx="206" cy="78" r="4" fill="#a79bff"/>
+        </svg>
+        <p class="fig-cap">Fig. 01 — Scored, not guessed</p>
+      </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>North Path · 2026 Program Index · built by Aarya Patel</span>
+    <span><a href="/methodology">Methodology</a> · <a href="#tool">Back to the tool</a></span>
+  </div>
+</footer>
+
+<script type="module">
+  /* Scroll reveals — cheap, and skipped entirely for reduced-motion users. */
+  const slow = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll('.reveal');
+  if (slow || !('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach(el => io.observe(el));
+  }
+
+  /* ----------------------------------------------------------------------
+     Particle field. Loaded from a CDN as a module, so if the CDN is blocked,
+     WebGL is unavailable, or the user asked for less motion, the hero simply
+     keeps its gradient and nothing below it is affected.
+  ---------------------------------------------------------------------- */
+  const canvas = document.getElementById('field');
+
+  /* The CDN copy is gzipped and cached across sites, so try it first; the
+     vendored copy in static/ means a blocked or down CDN costs nothing but a
+     slightly larger download. Either way the page has already rendered. */
+  async function loadThree() {
+    try {
+      return await import('https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js');
+    } catch (e) {
+      return await import('/static/vendor/three.module.min.js');
+    }
+  }
+
+  async function field() {
+    const THREE = await loadThree();
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false,
+                                               powerPreference: 'low-power' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+    camera.position.z = 4.4;
+
+    // Point count scales with the screen: a phone does not need 6,000 points.
+    const COUNT = window.innerWidth < 700 ? 2600 : 6000;
+    const home = new Float32Array(COUNT * 3);     // the sphere
+    const away = new Float32Array(COUNT * 3);     // where they drift as you scroll
+    const seed = new Float32Array(COUNT);
+
+    // Fibonacci sphere: even coverage, no clumping at the poles.
+    const PHI = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < COUNT; i++) {
+      const y = 1 - (i / (COUNT - 1)) * 2;
+      const r = Math.sqrt(Math.max(0, 1 - y * y));
+      const th = PHI * i;
+      const shell = 1.55 + Math.random() * 0.1;          // a little thickness
+      home[i*3]     = Math.cos(th) * r * shell;
+      home[i*3 + 1] = y * shell;
+      home[i*3 + 2] = Math.sin(th) * r * shell;
+      const d = 3.2 + Math.random() * 4.5;
+      away[i*3]     = home[i*3]     * d + (Math.random() - 0.5) * 2;
+      away[i*3 + 1] = home[i*3 + 1] * d + (Math.random() - 0.5) * 2;
+      away[i*3 + 2] = home[i*3 + 2] * d + (Math.random() - 0.5) * 2;
+      seed[i] = Math.random() * Math.PI * 2;
+    }
+
+    const geo = new THREE.BufferGeometry();
+    const live = new Float32Array(home);
+    geo.setAttribute('position', new THREE.BufferAttribute(live, 3));
+
+    // A round sprite, drawn once: square points give the whole thing away.
+    const tex = (() => {
+      const c = document.createElement('canvas');
+      c.width = c.height = 64;
+      const g = c.getContext('2d').createRadialGradient(32, 32, 0, 32, 32, 32);
+      g.addColorStop(0,   'rgba(255,255,255,1)');
+      g.addColorStop(0.35,'rgba(200,190,255,.75)');
+      g.addColorStop(1,   'rgba(140,125,255,0)');
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 64, 64);
+      return new THREE.CanvasTexture(c);
+    })();
+
+    const points = new THREE.Points(geo, new THREE.PointsMaterial({
+      size: 0.035, map: tex, transparent: true, opacity: 0.95,
+      depthWrite: false, blending: THREE.AdditiveBlending,
+      color: new THREE.Color('#b9afff'), sizeAttenuation: true,
+    }));
+    scene.add(points);
+
+    function resize() {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      // Wide screens put the copy on the left, so the sphere moves out of its way.
+      points.position.x = w > 1000 ? 1.5 : (w > 760 ? 0.9 : 0);
+      points.position.y = w > 760 ? 0 : -0.5;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Cursor parallax, eased so it glides rather than snaps.
+    let mx = 0, my = 0, tx = 0, ty = 0;
+    window.addEventListener('pointermove', (e) => {
+      tx = (e.clientX / window.innerWidth - 0.5) * 0.6;
+      ty = (e.clientY / window.innerHeight - 0.5) * 0.4;
+    }, { passive: true });
+
+    // Only draw while the hero is actually on screen.
+    let visible = true;
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; })
+      .observe(document.querySelector('.hero'));
+
+    let raf = 0;
+    const clock = new THREE.Clock();
+    function frame() {
+      raf = requestAnimationFrame(frame);
+      if (!visible) return;
+      const t = clock.getElapsedTime();
+
+      // Scroll through the hero scatters the sphere.
+      const spread = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.9)));
+      const ease = spread * spread * (3 - 2 * spread);
+
+      for (let i = 0; i < COUNT; i++) {
+        const j = i * 3;
+        const drift = Math.sin(t * 0.55 + seed[i]) * 0.035;
+        live[j]     = home[j]     + (away[j]     - home[j])     * ease + drift;
+        live[j + 1] = home[j + 1] + (away[j + 1] - home[j + 1]) * ease + drift;
+        live[j + 2] = home[j + 2] + (away[j + 2] - home[j + 2]) * ease;
+      }
+      geo.attributes.position.needsUpdate = true;
+
+      mx += (tx - mx) * 0.05;
+      my += (ty - my) * 0.05;
+      points.rotation.y = t * 0.06 + mx;
+      points.rotation.x = my;
+      points.material.opacity = 0.95 - ease * 0.55;
+
+      renderer.render(scene, camera);
+    }
+
+    if (slow) { renderer.render(scene, camera); }   // one still frame, no loop
+    else { frame(); }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+      else if (!slow && !raf) { frame(); }      // guard: never start a second loop
+    });
+  }
+
+  field().catch(() => { canvas.style.display = 'none'; });
+</script>
 </body>
 </html>

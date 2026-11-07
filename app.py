@@ -81,6 +81,23 @@ def data_health() -> dict:
     }
 
 
+def site_stats() -> dict:
+    """The figures the hero quotes. Counted from the data, never typed in by hand.
+
+    A landing page that boasts "25 universities" while the file holds 19 is the
+    same failure as an unsourced tuition number, just louder.
+    """
+    programs = load_all_programs()
+    health = data_health()
+    sourced = health["total"] - health["unverified"]
+    return {
+        "universities": len({p.university for p in programs}),
+        "degrees": len(DEGREES),
+        "cities": len(CITIES),
+        "sourced_pct": round(100 * sourced / health["total"]) if health["total"] else 0,
+    }
+
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     weights = load_weights()
@@ -213,6 +230,7 @@ def index():
         summary=summary,
         ai_note=ai_note,
         ai_enabled=assistant.enabled(),
+        stats=site_stats(),
         degree=degree,
         degree_groups=degree_groups(),
         outlook=outlook,

@@ -129,6 +129,11 @@ data/
   outlook.json        salary / job outlook per degree group (display only)
   cities.json         living-cost ranges per city, plus optional crime index
   survey_responses.csv what real students report spending
+static/
+  vendor/three.module.min.js   local copy of Three.js, used if the CDN is blocked
+templates/
+  index.html     landing page + the tool; WebGL particle hero in a <script type=module>
+  methodology.html
 cli.py           rank / cost / calibrate / audit
 app.py           Flask web UI
 train_weights.py fit the ranker weights instead of choosing them
@@ -157,6 +162,21 @@ naming a replacement is followed rather than surfaced as a broken page.
 With no key the app behaves exactly as before, so an expired key or a rate limit
 degrades the page rather than breaking it. `costmodel/assistant.py` is the whole
 integration.
+
+## The front end
+
+One page: a hero, the tool, and how the score is made. The hero runs a ~6,000-point
+particle sphere in Three.js that scatters as you scroll and follows the cursor. It is
+decoration and behaves like it:
+
+- Three.js loads from a CDN, falls back to `static/vendor/three.module.min.js`, and if
+  both fail the canvas hides itself. Nothing below the hero depends on it.
+- `prefers-reduced-motion` draws a single still frame and starts no animation loop.
+- The point count halves below 700px, and rendering pauses when the hero scrolls out of
+  view or the tab is hidden.
+
+The numbers in the hero (universities, degrees, cities, % verified) are counted from
+`data/` at render time by `site_stats()` in `app.py`, not typed into the template.
 
 ## Deploying
 

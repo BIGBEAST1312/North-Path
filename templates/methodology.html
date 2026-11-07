@@ -4,26 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Methodology — North Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
-  :root{--deep:#12281e;--cream:#f5efdc;--gold:#c9a227;--ink:#12281e;--muted:#5f6b5f;--rule:#d9d0b4;--warn:#8a4b12}
+  :root{--bg:#06060b;--card:rgba(255,255,255,.035);--line:rgba(255,255,255,.09);
+    --text:#edebf7;--muted:#9793b4;--dim:#6f6b8c;--violet:#7b6cf6;--violet-lift:#a79bff;--amber:#e8b06a}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--deep);
-    font:15px/1.65 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-  .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif}
-  .sheet{max-width:760px;margin:0 auto;background:var(--cream);color:var(--ink);
-    padding:40px 44px 56px;border-top:5px solid var(--gold);min-height:100vh}
-  @media(max-width:620px){.sheet{padding:28px 20px 40px}}
-  .back{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);text-decoration:none;margin:0 0 22px;font-weight:600}
-  .back:hover{color:var(--ink)}
-  h1{font-size:27px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;font-weight:600}
-  .kicker{font-style:italic;color:var(--muted);margin:0 0 26px}
-  h2{font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin:32px 0 10px;
-    border-left:3px solid var(--gold);padding-left:12px;font-weight:600}
-  p,li{font-size:15px}
-  code{background:#e8e2cc;padding:1px 6px;font-size:13px}
-  .warn{border-left:3px solid var(--warn);background:#e8e2cc;padding:14px 16px;color:#5a3512}
-  .rule{height:1px;background:var(--rule);margin:26px 0}
+  body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;
+    font:15px/1.7 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(70% 45% at 50% -10%,rgba(123,108,246,.22),transparent 70%)}
+  .serif,em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400}
+  .sheet{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:40px 24px 80px;min-height:100vh}
+  @media(max-width:620px){.sheet{padding:28px 18px 56px}}
+  .back{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);text-decoration:none;margin:0 0 30px;
+    border:1px solid var(--line);border-radius:99px;padding:7px 15px;background:var(--card)}
+  .back:hover{color:var(--text);border-color:var(--violet)}
+  h1{font-size:clamp(30px,5vw,44px);letter-spacing:-.025em;margin:0 0 8px;font-weight:600;text-transform:none}
+  .kicker{color:var(--muted);margin:0 0 10px;font-size:16px}
+  h2{font-size:12px;letter-spacing:.17em;text-transform:uppercase;margin:40px 0 12px;
+    font-weight:600;color:var(--violet-lift);display:flex;align-items:center;gap:12px}
+  h2:after{content:"";flex:1;height:1px;background:var(--line)}
+  p,li{font-size:15px;color:var(--muted)}
+  p strong,li strong,strong{color:var(--text);font-weight:600}
+  a{color:var(--violet-lift)}
+  code{background:rgba(123,108,246,.14);border:1px solid rgba(123,108,246,.22);
+    border-radius:5px;padding:1px 6px;font-size:13px;color:#cfc8ff}
+  .warn{border:1px solid rgba(232,176,106,.3);border-radius:14px;
+    background:rgba(232,176,106,.07);padding:15px 17px;color:#e7dcc8}
+  .warn code{background:rgba(232,176,106,.14);border-color:rgba(232,176,106,.25);color:#f0d2a6}
+  .rule{height:1px;background:var(--line);margin:34px 0}
+  table{width:100%;border-collapse:collapse;margin:10px 0 0}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+  th{color:var(--dim);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 </style>
 </head>
 <body>
